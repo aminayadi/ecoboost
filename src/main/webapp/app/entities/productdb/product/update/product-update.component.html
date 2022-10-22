@@ -1,0 +1,183 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-product-heading" data-cy="ProductCreateUpdateHeading">Create or edit a Product</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="text" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_name">Name</label>
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_image">Image</label>
+          <div>
+            <img
+              [src]="'data:' + editForm.get('imageContentType')!.value + ';base64,' + editForm.get('image')!.value"
+              style="max-height: 100px"
+              *ngIf="editForm.get('image')!.value"
+              alt="product image"
+            />
+            <div *ngIf="editForm.get('image')!.value" class="form-text text-danger clearfix">
+              <span class="pull-start">{{ editForm.get('imageContentType')!.value }}, {{ byteSize(editForm.get('image')!.value!) }}</span>
+              <button
+                type="button"
+                (click)="clearInputImage('image', 'imageContentType', 'file_image')"
+                class="btn btn-secondary btn-xs pull-end"
+              >
+                <fa-icon icon="times"></fa-icon>
+              </button>
+            </div>
+            <input type="file" id="file_image" data-cy="image" (change)="setFileData($event, 'image', true)" accept="image/*" />
+          </div>
+          <input type="hidden" class="form-control" name="image" id="field_image" data-cy="image" formControlName="image" />
+          <input
+            type="hidden"
+            class="form-control"
+            name="imageContentType"
+            id="field_imageContentType"
+            formControlName="imageContentType"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_imgname">Imgname</label>
+          <input type="text" class="form-control" name="imgname" id="field_imgname" data-cy="imgname" formControlName="imgname" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_description">Description</label>
+          <input
+            type="text"
+            class="form-control"
+            name="description"
+            id="field_description"
+            data-cy="description"
+            formControlName="description"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_rating">Rating</label>
+          <input type="number" class="form-control" name="rating" id="field_rating" data-cy="rating" formControlName="rating" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_volume">Volume</label>
+          <input type="number" class="form-control" name="volume" id="field_volume" data-cy="volume" formControlName="volume" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_code">Code</label>
+          <input type="text" class="form-control" name="code" id="field_code" data-cy="code" formControlName="code" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_reduction">Reduction</label>
+          <input type="number" class="form-control" name="reduction" id="field_reduction" data-cy="reduction" formControlName="reduction" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_pricetogo">Pricetogo</label>
+          <input type="number" class="form-control" name="pricetogo" id="field_pricetogo" data-cy="pricetogo" formControlName="pricetogo" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_pricenej">Pricenej</label>
+          <input type="number" class="form-control" name="pricenej" id="field_pricenej" data-cy="pricenej" formControlName="pricenej" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_pricecot">Pricecot</label>
+          <input type="number" class="form-control" name="pricecot" id="field_pricecot" data-cy="pricecot" formControlName="pricecot" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_priceseneg">Priceseneg</label>
+          <input
+            type="number"
+            class="form-control"
+            name="priceseneg"
+            id="field_priceseneg"
+            data-cy="priceseneg"
+            formControlName="priceseneg"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_priceghan">Priceghan</label>
+          <input type="number" class="form-control" name="priceghan" id="field_priceghan" data-cy="priceghan" formControlName="priceghan" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_devisetogo">Devisetogo</label>
+          <input
+            type="text"
+            class="form-control"
+            name="devisetogo"
+            id="field_devisetogo"
+            data-cy="devisetogo"
+            formControlName="devisetogo"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_devisenej">Devisenej</label>
+          <input type="text" class="form-control" name="devisenej" id="field_devisenej" data-cy="devisenej" formControlName="devisenej" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_devisecot">Devisecot</label>
+          <input type="text" class="form-control" name="devisecot" id="field_devisecot" data-cy="devisecot" formControlName="devisecot" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_deviseseneg">Deviseseneg</label>
+          <input
+            type="text"
+            class="form-control"
+            name="deviseseneg"
+            id="field_deviseseneg"
+            data-cy="deviseseneg"
+            formControlName="deviseseneg"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_deviseghan">Deviseghan</label>
+          <input
+            type="text"
+            class="form-control"
+            name="deviseghan"
+            id="field_deviseghan"
+            data-cy="deviseghan"
+            formControlName="deviseghan"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
