@@ -1,0 +1,87 @@
+{
+  "changelogDate": "20221004162634",
+  "clientRootFolder": "productdb",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "image",
+      "fieldType": "byte[]",
+      "fieldTypeBlobContent": "image"
+    },
+    {
+      "fieldName": "imgname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "rating",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "volume",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "code",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "reduction",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "pricetogo",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "pricenej",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "pricecot",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "priceseneg",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "priceghan",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "devisetogo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "devisenej",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "devisecot",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deviseseneg",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "deviseghan",
+      "fieldType": "String"
+    }
+  ],
+  "microserviceName": "productdb",
+  "name": "Product",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}
