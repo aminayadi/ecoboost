@@ -1,0 +1,355 @@
+<div class="all-bloc">
+  <div class="header">
+    <div class="mini-nav">
+      <p class="detail-title">FAQ</p>
+      <span class="home-span" routerLink="/">Home </span>
+
+      <span class="prod-span"> > FAQ</span>
+    </div>
+  </div>
+
+  <div class="container-center">
+    <p class="title-part last2">How can we assist you ?</p>
+    <p class="parag">Frequently asked questions & answers</p>
+
+    <div class="qst">
+      <div class="question-part" (click)="collapse(1)">
+        <div
+          class="number-question"
+          [ngStyle]="{
+            'background-color': question[1] === true ? 'green' : '#f2f2f2',
+            color: question[1] === true ? 'white' : 'black'
+          }"
+        >
+          01
+        </div>
+        <p class="question-text">
+          Will overdosing on EcoBoostXB™ damage my engine?
+        </p>
+      </div>
+      <div *ngIf="question[1]">
+        <p class="response">No, though it’s a waste of money to do so.</p>
+
+        <p class="response icon-reseau-sociaux">
+          <a href="https://www.facebook.com/EcoBoostEnzymeFuelTreatment/">
+            <img
+              src="assets/icons/facebook-circle.png"
+              alt="icon-facebook"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/twitter-fill.png"
+              alt="icon-twitter"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/linkedin-fill.png"
+              alt="icon-linkeddin"
+              class="sub-icon"
+            />
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="qst">
+      <div class="question-part" (click)="collapse(2)">
+        <div
+          class="number-question"
+          [ngStyle]="{
+            'background-color': question[2] === true ? 'green' : '#f2f2f2',
+            color: question[2] === true ? 'white' : 'black'
+          }"
+        >
+          02
+        </div>
+        <p class="question-text">
+          How long can EcoBoostXB keep my fuel stable?
+        </p>
+      </div>
+      <div *ngIf="question[2]">
+        <p class="response">
+          EcoBoost Fuel Treatment Powered by XBEE Technology (EXB) can stabilize
+          fuel quality in storage condition for over 12 months without
+          compromising it's quality.
+        </p>
+
+        <p class="response icon-reseau-sociaux">
+          <a href="">
+            <img
+              src="assets/icons/facebook-circle.png"
+              alt="icon-facebook"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/twitter-fill.png"
+              alt="icon-twitter"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/linkedin-fill.png"
+              alt="icon-linkeddin"
+              class="sub-icon"
+            />
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="qst">
+      <div class="question-part" (click)="collapse(3)">
+        <div
+          class="number-question"
+          [ngStyle]="{
+            'background-color': question[3] === true ? 'green' : '#f2f2f2',
+            color: question[3] === true ? 'white' : 'black'
+          }"
+        >
+          03
+        </div>
+        <p class="question-text">What is EcoBoostXB™ ?</p>
+      </div>
+      <div *ngIf="question[3]">
+        <p class="response">
+          The power of Nature. Naturally occurring enzymes that we use in
+          different part of the downstream oil industry, from the bioremediation
+          of oil to the use in transportation and power generation fuels. The
+          inclusion in fuels as mandated by the Ghana National Petroleum Agency
+          remain on specification. The use in different and novel locally
+          produced fuels have also been closely monitored by the Ghana
+          Environmental Protection Agency.
+        </p>
+
+        <p class="response icon-reseau-sociaux">
+          <a href="">
+            <img
+              src="assets/icons/facebook-circle.png"
+              alt="icon-facebook"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/twitter-fill.png"
+              alt="icon-twitter"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/linkedin-fill.png"
+              alt="icon-linkeddin"
+              class="sub-icon"
+            />
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="qst">
+      <div class="question-part" (click)="collapse(4)">
+        <div
+          class="number-question"
+          [ngStyle]="{
+            'background-color': question[4] === true ? 'green' : '#f2f2f2',
+            color: question[4] === true ? 'white' : 'black'
+          }"
+        >
+          04
+        </div>
+        <p class="question-text">How does EcoBoostXB™work?</p>
+      </div>
+      <div *ngIf="question[4]">
+        <p class="response">
+          The enzymes in EcoBoost™ cleave long-chain hydrocarbons This can be
+          simply put as keeping fuels straight from the refinery in refinery
+          condition, stopping the various hydrocarbon components from forming
+          some other bond, particulate or contamination. Once a state of
+          equilibrium is achieved, the enzymes catalytic action inhibits radical
+          change. In heavy fuels already in the market, more desirable changes
+          in viscosity and or density would be seen, in distillates generally
+          the ignition quality is improved.
+        </p>
+
+        <p class="response icon-reseau-sociaux">
+          <a href="">
+            <img
+              src="assets/icons/facebook-circle.png"
+              alt="icon-facebook"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/twitter-fill.png"
+              alt="icon-twitter"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/linkedin-fill.png"
+              alt="icon-linkeddin"
+              class="sub-icon"
+            />
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="qst">
+      <div class="question-part" (click)="collapse(5)">
+        <div
+          class="number-question"
+          [ngStyle]="{
+            'background-color': question[5] === true ? 'green' : '#f2f2f2',
+            color: question[5] === true ? 'white' : 'black'
+          }"
+        >
+          05
+        </div>
+        <p class="question-text">What is the shelf life for EcoBoostXB?</p>
+      </div>
+      <div *ngIf="question[5]">
+        <p class="response">
+          The standard EcoBoost shelf life, when stored properly (that is, not
+          exposed to ultra violet rays of the sun), is between three (3). and
+          five (5) years.
+        </p>
+
+        <p class="response icon-reseau-sociaux">
+          <a href="">
+            <img
+              src="assets/icons/facebook-circle.png"
+              alt="icon-facebook"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/twitter-fill.png"
+              alt="icon-twitter"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/linkedin-fill.png"
+              alt="icon-linkeddin"
+              class="sub-icon"
+            />
+          </a>
+        </p>
+      </div>
+    </div>
+    <div class="qst">
+      <div class="question-part" (click)="collapse(6)">
+        <div
+          class="number-question"
+          [ngStyle]="{
+            'background-color': question[6] === true ? 'green' : '#f2f2f2',
+            color: question[6] === true ? 'white' : 'black'
+          }"
+        >
+          06
+        </div>
+        <p class="question-text">Are there other reasons to use EcoBoostXB™?</p>
+      </div>
+      <div *ngIf="question[6]">
+        <p class="response">
+          CAPEX and OPEX. A $250,000 excavator is worthless if it suffers from
+          fuel related breakdowns, such as the failure of a $80 injector. The
+          common denominator is Productivity. Reliable equipment be it boilers,
+          a bus or train service, or power generation want consistency of
+          production. Continual use of EcoBoost treated fuels should allow the
+          shift from expensive ad hoc maintenance to predictive based
+          maintenance.
+        </p>
+
+        <p class="response icon-reseau-sociaux">
+          <a href="">
+            <img
+              src="assets/icons/facebook-circle.png"
+              alt="icon-facebook"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/twitter-fill.png"
+              alt="icon-twitter"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/linkedin-fill.png"
+              alt="icon-linkeddin"
+              class="sub-icon"
+            />
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="qst">
+      <div class="question-part" (click)="collapse(7)">
+        <div
+          class="number-question"
+          [ngStyle]="{
+            'background-color': question[7] === true ? 'green' : '#f2f2f2',
+            color: question[7] === true ? 'white' : 'black'
+          }"
+        >
+          07
+        </div>
+        <p class="question-text">
+          How does EcoBoostXB™ produce better fuel economy, reduce emissions,
+          reduce soot, and lower exhaust temperatures?"
+        </p>
+      </div>
+      <div *ngIf="question[7]">
+        <p class="response">
+          Its the Stoichiometric ratio of Fuel to Air. Cleaning up the fuel
+          delivery side, restoring fuel filter porosity and delivering correct
+          atomisation of fuel molecules produce the above.
+        </p>
+
+        <p class="response icon-reseau-sociaux">
+          <a href="">
+            <img
+              src="assets/icons/facebook-circle.png"
+              alt="icon-facebook"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/twitter-fill.png"
+              alt="icon-twitter"
+              class="sub-icon"
+            />
+          </a>
+          <a href="">
+            <img
+              src="assets/icons/linkedin-fill.png"
+              alt="icon-linkeddin"
+              class="sub-icon"
+            />
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="become">
+  <app-becom-ecoboost> </app-becom-ecoboost>
+</div>

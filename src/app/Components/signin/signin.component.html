@@ -1,0 +1,205 @@
+
+<ng-container *ngIf="displaychoice">
+  <div class="spaceSign">
+    <div class="backimage">
+      <div class="slogon" routerLink="/">
+        <img src="assets/images/slogon/slogon.svg" alt="" width="300px" />
+      </div>
+      <div class="description">
+        <p class="text-desrip">Welcome to the EcoBoost FT management system</p>
+      </div>
+      <div class="actor">
+
+        <ul>
+          <li class="acteur" (click)="displayAgentForm()">Agent</li>
+          <li class="acteur" (click)="displayDeliveryForm()">Delivery</li>
+          <li class="acteur" (click)="displayCustomerForm()">Customer</li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<!--  For Agent -->
+<ng-container *ngIf="displyAgent">
+
+  <div class="spaceSign">
+
+    <div class="backimage spaceagent">
+
+      <div class="slogon" routerLink="/">
+        <img src="assets/images/slogon/slogon.svg" alt="" width="300px" />
+      </div>
+
+      <div>
+        <p class="text-desrip">Agent Login </p>
+      </div>
+      <div class="form">
+
+        <div class="agentphoto">
+        </div>
+
+        <div class="signinform">
+
+          <div class="blocinput">
+            <div class="input">
+              <span class="label"> Username </span>
+              <input type="text" class="inputformulaire">
+            </div>
+          </div>
+
+          <div class="blocinput">
+            <div class="input">
+              <span class="label"> Password </span>
+              <input type="password" class="inputformulaire">
+            </div>
+          </div>
+
+          <div class="rememberforget">
+            <div class="remember"> <input type="checkbox" name="" class=""><span> Remember me</span></div>
+            <div class="forget"><span>Forget password ?</span></div>
+          </div>
+
+          <div class="btnlogin">
+
+            <div class="btnlog"> Login </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+  </div>
+
+</ng-container>
+
+<!-- For Customer -->
+<ng-container *ngIf="displayCustomer">
+
+  <div class="spaceSign">
+
+    <div class="backimage spaceCustomer">
+
+      <div class="slogon" routerLink="/">
+        <img src="assets/images/slogon/slogon.svg" alt="" width="300px" />
+      </div>
+
+      <div>
+        <p class="text-desrip">Customer Login </p>
+      </div>
+      <div class="form">
+
+        <div class="agentphoto customimg">
+        </div>
+
+        <div class="signinform">
+
+          <div class="blocinput">
+            <div class="input">
+              <span class="label"> Username </span>
+              <input type="text" class="inputformulaire">
+            </div>
+          </div>
+
+          <div class="blocinput">
+            <div class="input">
+              <span class="label"> Password </span>
+              <input type="password" class="inputformulaire">
+            </div>
+          </div>
+
+          <div class="rememberforget">
+            <div class="remember"> <input type="checkbox" name="" class=""><span> Remember me</span></div>
+            <div class="forget"><span>Forget password ?</span></div>
+          </div>
+
+          <div class="btnlogin">
+
+            <div class="btnlog"> Login </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</ng-container>
+
+<!-- For Delivery -->
+<ng-container *ngIf="displayDeliver">
+
+  <div class="spaceSign">
+
+    <div class="backimage spacedelevery">
+
+      <div class="slogon" routerLink="/">
+        <img src="assets/images/slogon/slogon.svg" alt="" width="300px" />
+      </div>
+
+      <div>
+        <p class="text-desrip">Delivery Login </p>
+      </div>
+      <div class="form">
+
+        <div class="agentphoto deliveryphoto">
+        </div>
+
+        <div class="signinform">
+
+          <div class="blocinput">
+            <div class="input">
+              <span class="label"> Username </span>
+              <input type="text" class="inputformulaire">
+            </div>
+          </div>
+
+          <div class="blocinput">
+            <div class="input">
+              <span class="label"> Password </span>
+              <input type="password" class="inputformulaire">
+            </div>
+          </div>
+
+          <div class="rememberforget">
+            <div class="remember"> <input type="checkbox" name="" class=""><span> Remember me</span></div>
+            <div class="forget"><span>Forget password ?</span></div>
+          </div>
+
+          <div class="btnlogin">
+            <div class="btnlog"> Login </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</ng-container>

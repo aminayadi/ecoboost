@@ -1,0 +1,50 @@
+
+.main-content {
+  background-color: white;
+  height: 100%;
+}
+.head {
+  padding-top: 30px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.anglet {
+  display: flex;
+  margin-right: 130px;
+}
+
+.anglet-sub {
+  margin-right: 20px;
+  cursor: pointer;
+  padding-bottom: 2px;
+}
+
+.anglet-sub:hover {
+  text-decoration: underline;
+  text-decoration-color: green;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 10px;
+}
+
+.text-title {
+  padding-left: 25px;
+  font-size: 24px;
+  line-height: 16px;
+  text-transform: capitalize;
+}
+
+.trait {
+  height: 1px;
+  width: 95%;
+  margin-left: 25px;
+  background-color: #e9ecf3;
+}
+
+.graph {
+  margin-top: 300px;
+  margin-left: 500px;
+  color: blue;
+  font-size: 29px;
+}

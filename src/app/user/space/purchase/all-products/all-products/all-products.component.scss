@@ -1,0 +1,45 @@
+.content-all {
+  background-color: white;
+  height: 100%;
+  padding-left: 20px;
+  border-radius: 10px;
+}
+
+.text-title {
+  padding-top: 30px;
+  padding-bottom: 25px;
+  font-size: 24px;
+  line-height: 16px;
+  text-transform: capitalize;
+}
+
+.trait {
+  height: 1px;
+  width: 95%;
+  margin-left: 25px;
+  background-color: #e9ecf3;
+}
+
+.head-table {
+  background: rgba(245, 245, 245, 0.6);
+  height: 50px;
+  color: #838a91;
+  padding-bottom: 10px;
+}
+
+th {
+  font-family: "Poppins";
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.tab-content {
+  padding-top: 50px;
+  padding-right: 25px;
+}
+
+td {
+  font-family: "Poppins";
+  font-size: 16px;
+  line-height: 24px;
+}

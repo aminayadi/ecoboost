@@ -1,0 +1,91 @@
+<div class="nav">
+  <div class="top-container">
+    <img
+      src="assets/icons/logoecobst.png"
+      alt="logo-ecoboost"
+      height="80"
+      width="200"
+      class="logo-item"
+      routerLink="/"
+    />
+    <div class="nav-items">
+      <div class="list">
+        <ul class="list-item">
+          <li routerLink="/home">
+            <a
+              routerLinkActive="item-activate"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              Home
+            </a>
+          </li>
+          <li routerLink="/about">
+            <a routerLinkActive="item-activate"> About us </a>
+          </li>
+          <li routerLink="/product" routerLinkActive="active">
+            <a routerLinkActive="item-activate"> Products</a>
+          </li>
+          <li routerLink="/our-value" routerLinkActive="active">
+            <a routerLinkActive="item-activate"> Our values</a>
+          </li>
+
+          <li routerLink="/promo" routerLinkActive="active">
+            <a routerLinkActive="item-activate"> Sales promo</a>
+          </li>
+          <li routerLink="/faq" routerLinkActive="active">
+            <a routerLinkActive="item-activate"> FAQ</a>
+          </li>
+          <li routerLink="/contact" routerLinkActive="active">
+            <a routerLinkActive="item-activate"> Contact-us</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="list-icon">
+        <div class="user-icon dropdown">
+          <button
+            class="dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="assets/icons/user_account.png"
+              alt="user-icon"
+              height="25"
+              width="25"
+            />
+          </button>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <a class="dropdown-item" routerLink="/signin"
+                ><img src="assets/icons/door-open.svg" alt="" width="20px"/> Login</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/user/space">
+                <img src="assets/icons/person-workspace.svg" alt="" width="20px" /> My Space</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" routerLink="/">
+                <img src="assets/icons/power.svg" alt=""width="20px" /> Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="panier" routerLink="/my-cart">
+          <img
+            src="assets/icons/shopping-cart.png"
+            alt="pabier-icon"
+            height="25"
+            width="25"
+          />
+          <span class="badge">{{ badgeCart }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

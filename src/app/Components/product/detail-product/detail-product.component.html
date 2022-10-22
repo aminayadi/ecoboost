@@ -1,0 +1,118 @@
+<div class="all-bloc">
+  <div class="header">
+    <div class="mini-nav">
+      <p class="detail-title">Detail Product</p>
+      <span class="home-span" routerLink="/">Home </span>
+
+      <span class="prod-span"> > Detail Product</span>
+    </div>
+  </div>
+
+  <div class="container-all">
+
+    <div class="card">
+      <app-notification [update]="isUpdateProduct" [add]="isAddProduct" [productName]="productName" [nbreItem]="nbreItem" ></app-notification>
+      <div class="sup-part">
+        <img [src]="product?.image" alt="" class="imge-product" />
+
+        <div class="detail-prod">
+          <p class="title-card">{{ product?.name }} </p>
+          <p class="price-with-remise">
+            <span class="price-barret"> {{ product?.previewsPrice }} $ </span>
+            <span class="remise-chiffre"> -{{ product?.reduction }}% </span>
+          </p>
+          <p class="price">{{ product?.price }}$</p>
+          <div class="state">
+            <p class="stat-stock">En stock</p>
+            <p class="star-part">
+              <img src="assets/images/products/start.png" alt="start-icon" />
+            </p>
+          </div>
+          <div class="counter-panier">
+            <div class="input-item">
+              <button class="plus" (click)="decrement()">-</button>
+              <input type="number" class="number-input" disabled [value]="qte" />
+              <button class="minus" (click)="increment()">+</button>
+
+              <button class="btn-add-card" [disabled]="isAddedInBasket" (click)="addToCart()">
+                <img src="assets/images/icons/add_cart.png" alt="" />
+
+                Add to cart
+              </button>
+            </div>
+            <p class="icons-items">
+              <img
+                src="assets/images/icons/favorite.png"
+                alt=""
+                class="favorite-icon"
+              />
+              <img src="assets/images/icons/refresh.png" alt="" />
+            </p>
+          </div>
+
+          <div class="marketing-band">
+            <div class="marketing-1">
+              <div class="icon-mark">
+                <img
+                  src="assets/images/products/detail/noun-price.png"
+                  alt=""
+                  width=""
+                />
+              </div>
+              <div class="description-mark">
+                <p class="title-marketing">Best prices offered</p>
+                <span class="small-description"
+                  >Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.</span
+                >
+              </div>
+            </div>
+
+            <div class="marketing-1">
+              <div class="icon-mark">
+                <img
+                  src="assets/images/products/detail/fast-delivery.png"
+                  alt=""
+                />
+              </div>
+              <div class="description-mark">
+                <p class="title-marketing">Best prices offered</p>
+                <span class="small-description"
+                  >Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.</span
+                >
+              </div>
+            </div>
+
+            <div class="marketing-1">
+              <div class="icon-mark">
+                <img
+                  src="assets/images/products/detail/customer-service.png"
+                  alt=""
+                />
+              </div>
+              <div class="description-mark">
+                <p class="title-marketing">Best prices offered</p>
+                <span class="small-description"
+                  >Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-part">
+        <p class="descript">Description:</p>
+        <p class="text-describe">
+          {{ product?.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="become">
+    <app-becom-ecoboost> </app-becom-ecoboost>
+  </div>
+</div>

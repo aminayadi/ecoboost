@@ -1,0 +1,46 @@
+<div class="all-bloc">
+
+  <div class="header">
+
+    <div class="mini-nav">
+      <p class="detail-title"> Product</p>
+      <span class="home-span" routerLink="/">Home </span>
+      <span class="prod-span"> > Products</span>
+    </div>
+  </div>
+
+  <div class="container-all">
+    <div class="container-card">
+
+      <div class="card" *ngFor="let product of ProductsDto" routerLink="/product/{{product.code}}" >
+        <div class="image-card">
+          <img [src]="product.image" alt="" class="imag-card"/>
+        </div>
+        <p class="title-card">{{product.name}}</p>
+        <div class="price">
+          <span class="chiffre">{{product.price}} $</span>
+
+          <p class="chiffre-remise">
+            <span class="previews">{{product.previewsPrice}} $</span>
+            <span class="remise">-{{product.reduction}} %</span>
+          </p>
+        </div>
+        <p class="available">
+          <span class="avail">En stock</span>
+          <span class="start-nbre">
+            <img src="assets/images/products/start.png" alt="" class="start" />
+          </span>
+        </p>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <div class="become">
+    <app-becom-ecoboost> </app-becom-ecoboost>
+  </div>
+</div>
+
+

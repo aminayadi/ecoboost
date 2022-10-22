@@ -1,0 +1,30 @@
+<div class="container" [@routerTransition]>
+  <form
+    role="form"
+    class="form-horizontal text-left"
+    action="https://secure.paygate.co.za/payweb3/process.trans"
+    method="POST"
+    [formGroup]="payweb3Request!"
+    (ngSubmit)="onSubmit($event)"
+  >
+
+    <input
+      type="hidden"
+      name="PAY_REQUEST_ID"
+      formControlName="PAY_REQUEST_ID"
+    />
+    <input type="hidden" name="CHECKSUM" formControlName="CHECKSUM" />
+    <br />
+
+    <div class="form-group row">
+      <div class="col-sm-12">
+        <input
+          class="btn btn-success btn-block"
+          type="submit"
+          value="Confirm Payment Process"
+        />
+      </div>
+    </div>
+    <br />
+  </form>
+</div>

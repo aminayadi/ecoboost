@@ -1,0 +1,30 @@
+<div class="backimage">
+
+  <div class="bandhead">
+
+    <p class="icon-align" (click)="displaymenu()"> <img src="assets/images/icons/menu.png" alt="" width="30px" /> </p>
+    <p class="icon-align" routerLink="/"> <img src="assets/images/slogon/slogon.svg" alt="" width="250px" /> </p>
+    <p class="icon-align"> <img src="assets/images/icons/usericon.png" alt="" width="30px" /></p>
+
+  </div>
+
+
+    <div class="containerper">
+
+      <div class="menu" *ngIf="displayMenu">
+        <app-menu> </app-menu>
+      </div>
+
+      <div class="outletBody">
+        <router-outlet> </router-outlet>
+      </div>
+
+     <div class="card">
+     <app-card-perso> </app-card-perso>
+    </div>
+
+
+    </div>
+
+
+</div>

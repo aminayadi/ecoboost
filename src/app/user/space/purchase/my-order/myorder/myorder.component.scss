@@ -1,0 +1,131 @@
+.content-all {
+  background-color: white;
+  height: 100%;
+  padding-left: 20px;
+  border-radius: 10px;
+
+}
+
+.main-content {
+  font-family: "Poppins";
+  padding-right: 20px;
+}
+
+.text-title {
+  padding-top: 30px;
+  padding-bottom: 25px;
+  font-size: 24px;
+  line-height: 16px;
+  text-transform: capitalize;
+}
+
+.trait {
+  height: 1px;
+  width: 95%;
+  margin-left: 25px;
+  background-color: #e9ecf3;
+}
+
+.container-order {
+  margin-top: 50px;
+  background: rgba(245, 245, 245, 0.6);
+}
+
+.title-order {
+  font-size: 16px;
+  padding-left: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 2px dashed #ced0d3;
+}
+
+.code-refer {
+  color: #4bb02d;
+}
+
+.head-table {
+  background: rgba(245, 245, 245, 0.6);
+  height: 50px;
+  color: #080808;
+  padding-bottom: 10px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.add-order {
+  font-family: "Poppins";
+  font-size: 18px;
+  line-height: 24px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.btn-add-order {
+  border: 2px dashed #ced0d3;
+  display: inline-block;
+  padding: 5px 43%;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color: #838a91;
+  font-size: 17px;
+}
+
+.btn-add-order:hover {
+  background-color: #d7d9df56;
+}
+
+.input-product-name,
+.input-vente-point {
+  width: 340.78px;
+  height: 46px;
+  background: #ffffff;
+  border: 1px solid #efefef;
+  border-radius: 10px;
+  padding-left: 5px;
+}
+
+.Qts {
+  width: 79px;
+  height: 46px;
+  border: 1px solid #efefef;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.input-vente-point {
+  width: 300px;
+}
+
+.add-date {
+  height: 46px;
+  background: #ffffff;
+  border: 1px solid #efefef;
+  border-radius: 10px;
+}
+
+input:focus {
+  outline-color: rgb(187, 238, 187);
+}
+
+.validate {
+  text-align: right;
+  margin-right: 30px;
+}
+
+.btn-save {
+  width: 120px;
+  height: 40px;
+  background: #44bb00;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-save:hover {
+  background: #45bb00c5;
+}

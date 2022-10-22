@@ -1,0 +1,185 @@
+
+<div class="content-all">
+  <div class="main-content">
+
+    <div class="text-title"><strong >My claims </strong> </div>
+    <div class="trait"></div>
+
+  </div>
+
+
+  <div class="corBody">
+
+    <div class="contactcontent">
+
+      <div class="item1">
+
+         <img src="assets/images/background/notes.png" alt="" class="image-contact" >
+
+      </div>
+
+     <!-- /************************************************** content de input*********************************************/  -->
+
+     <form
+     class="item2"
+     [formGroup]="contactForm"
+     (ngSubmit)="sendMessage(contag)"
+     #contag="ngForm"
+   >
+     <p class="sendValid" *ngIf="sendValid">
+       <img src="assets/icons/ticket.svg" /> votre message à été réçu de
+       notre part, merci !!
+     </p>
+     <p class="sendInValid" *ngIf="sendInValid">{{ errormessage }}</p>
+     <div class="unity unity2">
+       <label class="flexstart">
+         Name *
+         <span
+           class="messageValidator"
+           *ngIf="
+             ((contactForm.controls['fullName'].touched ||
+               contactForm.controls['fullName'].dirty) &&
+               contactForm.controls['fullName'].invalid) ||
+             (contactForm.controls['fullName'].invalid && contag.submitted)
+           "
+         >
+           This field is required *</span
+         >
+       </label>
+
+       <input
+         type="text"
+         placeholder="Full Name"
+         [ngClass]="{
+           'fieldinput defaultStyle': true,
+           invalidStyle:
+             ((contactForm.controls['fullName'].touched ||
+               contactForm.controls['fullName'].dirty) &&
+               contactForm.controls['fullName'].invalid) ||
+             (contactForm.controls['fullName'].invalid && contag.submitted)
+         }"
+         formControlName="fullName"
+         required
+       />
+     </div>
+
+     <div class="unity unity2">
+       <label class="flexstart">
+         Email *
+
+         <span
+           class="messageValidator"
+           *ngIf="
+             ((contactForm.controls['email'].touched ||
+               contactForm.controls['email'].dirty) &&
+               contactForm.controls['email'].invalid) ||
+             (contactForm.controls['email'].invalid && contag.submitted)
+           "
+         >
+           This field is required *</span
+         >
+       </label>
+       <input
+         type="text"
+         placeholder="Email address"
+         [ngClass]="{
+           'fieldinput defaultStyle': true,
+           invalidStyle:
+             ((contactForm.controls['email'].touched ||
+               contactForm.controls['email'].dirty) &&
+               contactForm.controls['email'].invalid) ||
+             (contactForm.controls['email'].invalid && contag.submitted)
+         }"
+         formControlName="email"
+         formControlName="email"
+         required
+       />
+     </div>
+
+     <div class="unity unity2">
+       <label class="flexstart">
+         Subject *
+         <span
+           class="messageValidator"
+           *ngIf="
+             ((contactForm.controls['objectContact'].touched ||
+               contactForm.controls['objectContact'].dirty) &&
+               contactForm.controls['objectContact'].invalid) ||
+             (contactForm.controls['objectContact'].invalid &&
+               contag.submitted)
+           "
+         >
+           This field is required *</span
+         >
+       </label>
+       <input
+         type="text"
+         placeholder="Add a subject..."
+         [ngClass]="{
+           'defaultStyle fieldinput': true,
+           invalidStyle:
+             ((contactForm.controls['objectContact'].touched ||
+               contactForm.controls['objectContact'].dirty) &&
+               contactForm.controls['objectContact'].invalid) ||
+             (contactForm.controls['objectContact'].invalid &&
+               contag.submitted)
+         }"
+         formControlName="objectContact"
+         formControlName="objectContact"
+         required
+       />
+     </div>
+
+     <div class="unity unity2">
+       <label class="flexstart">
+         Message *
+
+         <span
+           class="messageValidator"
+           *ngIf="
+             ((contactForm.controls['content'].touched ||
+               contactForm.controls['content'].dirty) &&
+               contactForm.controls['content'].invalid) ||
+             (contactForm.controls['content'].invalid && contag.submitted)
+           "
+         >
+           This field is required *</span
+         >
+       </label>
+       <textarea
+         class="areatext"
+         rows="10"
+         placeholder="Write your message..."
+         [ngClass]="{
+           'txtarea defaultStyle': true,
+           invalidStyle:
+             ((contactForm.controls['content'].touched ||
+               contactForm.controls['content'].dirty) &&
+               contactForm.controls['content'].invalid) ||
+             (contactForm.controls['content'].invalid && contag.submitted)
+         }"
+         formControlName="content"
+         formControlName="content"
+         required
+       ></textarea>
+     </div>
+
+     <div class="unity02">
+       <div class="text-right">
+         <input
+           type="submit"
+           class="btnsend"
+           value="Send"
+           [ngStyle]="{ cursor: cursor }"
+         />
+       </div>
+     </div>
+   </form>
+
+    </div>
+
+  </div>
+</div>
+
+    <!-- ************************************************** Content de input *********************************************  -->
+

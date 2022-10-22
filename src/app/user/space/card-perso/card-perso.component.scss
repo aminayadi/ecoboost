@@ -1,0 +1,134 @@
+@media screen and (max-width: 350px) {
+  .carduser,
+  .coduser,
+  .card-profile {
+    max-width: 350px;
+  }
+}
+
+.carduser {
+  width: 370px;
+  margin-top: 30px;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+
+.card-profile {
+  width: 350px;
+  height: 550px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255);
+  -webkit-box-shadow: 0px 9px 19px -1px rgba(0, 0, 0, 0.56);
+  box-shadow: 0px 9px 19px -1px rgba(0, 0, 0, 0.56);
+}
+
+.title-text {
+  padding-top: 22px;
+  padding-bottom: 22px;
+  padding-left: 24px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #b2b2b2;
+}
+
+.avatar {
+  height: 185px;
+  width: 185px;
+  text-align: center;
+  background: rgba(255, 210, 11, 0.16);
+  border-radius: 90px;
+  padding-top: 10px;
+  margin-left: 70px;
+  margin-top: 25px;
+}
+
+.text-firstname {
+  height: 20px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  padding-top: 5px;
+  padding-bottom: 0;
+}
+
+.text-birthday {
+  height: 19px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 40px;
+  color: #b2b2b2;
+}
+
+.description {
+  height: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: center;
+  margin-top: 27px;
+  margin-bottom: 27px;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.referrais {
+  font-size: 22px;
+  font-weight: 600;
+  padding-top: 15px;
+  padding-left: 24px;
+}
+
+.text-reffer {
+  margin-left: 15px;
+  color: #4bb02d;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.coduser {
+  height: 150px;
+  width: 350px;
+  border-radius: 10px;
+  background: #ffffff;
+  -webkit-box-shadow: 0px 9px 19px -1px rgba(0, 0, 0, 0.56);
+  box-shadow: 0px 9px 19px -1px rgba(0, 0, 0, 0.56);
+}
+
+.agent-text {
+  height: 55px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  color: #000000;
+  padding-top: 8px;
+  padding-left: 25px;
+}
+
+.agent-code {
+  background: #ffffff;
+  font-weight: bold;
+  line-height: 36px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+  color: #b69806;
+  font-size: 30px;
+}
+
+.ligne-horiz {
+  height: 1px;
+  width: 350px;
+  background: #ffffff;
+}
+
+.trait {
+  height: 1px;
+  width: 85%;
+  margin-left: 25px;
+  background-color: #e9ecf3;
+}

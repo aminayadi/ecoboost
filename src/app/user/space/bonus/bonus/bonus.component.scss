@@ -1,0 +1,124 @@
+.content-all {
+  height: 100%;
+  background-color: white;
+
+}
+.head-content {
+  padding-top: 30px;
+}
+
+.text-title {
+  height: 40px;
+  padding-left: 25px;
+  font-size: 24px;
+  line-height: 16px;
+  text-transform: capitalize;
+}
+
+.trait {
+  height: 1px;
+  width: 95%;
+  margin-left: 25px;
+  background-color: #e9ecf3;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 80px;
+  padding-right: 20px;
+  padding-top: 50px;
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 18px;
+  background-color: white;
+}
+.header,
+.footer-card {
+  height: 48px;
+  padding-top: 10px;
+  background-color: rgba(167, 167, 167, 0.107);
+  padding-left: 24px;
+}
+.body-card {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-bottom: rgb(77, 240, 77) solid 7px;
+  border-left: transparent solid 7px;
+  border-right: transparent solid 7px;
+}
+
+.triangle-down {
+  width: 0;
+  height: 0;
+  border-top: red solid 7px;
+  border-left: transparent solid 7px;
+  border-right: transparent solid 7px;
+  box-sizing: border-box;
+}
+
+.sta {
+  padding-top: 17px;
+  padding-left: 15px;
+}
+.pnt-stat {
+  font-size: 60px;
+  color: #5cb741;
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 885px) {
+  .main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+
+    column-gap: 20px;
+    height: 100%;
+  }
+
+  .graph-part {
+    width: 350px;
+    height: 420px;
+    border: rgb(238, 236, 236) solid 1px;
+  }
+
+  .tab-bonus {
+    flex-grow: 1;
+    border: rgb(238, 236, 236) solid 1px;
+  }
+
+  .header,
+  .footer-card {
+    height: 48px;
+    padding-left: 24px;
+  }
+
+  .footer-card {
+    font-size: 14px;
+    line-height: 21px;
+    color: #838a91;
+    background-color: white;
+  }
+
+  .table-responsive {
+    margin-top: 10px;
+    width: 70%;
+  }
+
+  .title {
+    font-family: "Poppins";
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #838a91;
+  }
+}

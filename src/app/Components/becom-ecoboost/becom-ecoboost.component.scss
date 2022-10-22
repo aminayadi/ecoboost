@@ -1,0 +1,170 @@
+.bloc-become-ecob {
+  min-height: 520px;
+  //padding-top: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  // margin-bottom: 100px;
+  border-bottom: solid red 6px;
+  position: relative;
+  transform: translateY(-300px);
+}
+
+.red-band {
+  width: 100%;
+  min-height: 187px;
+  height: 108px;
+  background: red;
+  padding-top: 10px;
+}
+.text-item {
+  max-width: 800px;
+}
+.becom-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 96px;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  text-align: center;
+}
+
+.sub-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 54px;
+  letter-spacing: -0.015em;
+  color: #ffffff;
+  text-align: center;
+}
+
+.descript2 {
+  padding: 50px;
+}
+.p-becom {
+  max-width: 690px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 29px;
+  /* or 181% */
+  letter-spacing: -0.015em;
+}
+.z-mail {
+  max-width: 737px;
+  height: 55px;
+  padding-left: 10px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+  background: #f9f9f9;
+  border: 1px solid #2c3e52;
+  border-radius: 4px 0px 0px 4px;
+  outline-color: #2c3e52;
+  margin-bottom: 20px;
+}
+.z-mail:focus {
+  outline-color: #a9aeb3;
+}
+.btn-req {
+  width: 176px;
+  height: 56px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  background: #2c3e52;
+  border: none;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.btn-req:hover {
+  background: #4e647e;
+}
+.tinda {
+  visibility: hidden;
+  height: 450px;
+  width: 450px;
+  position: absolute;
+  top: 0;
+  right: 7%;
+}
+
+@media screen and(min-width:646px) {
+  .btn-req {
+  }
+
+  .becom-title {
+    font-size: 36px;
+  }
+
+  .sub-title {
+    font-size: 20px;
+  }
+}
+
+@media screen and(min-width:956px) {
+  .tinda {
+    visibility: visible;
+    height: 350px;
+    width: 350px;
+    top: -50px;
+    right: 10%;
+  }
+
+  .becom-title,
+  .sub-title {
+    text-align: left;
+  }
+}
+
+@media screen and(min-width:1114px) {
+  .becom-title {
+    font-size: 44px;
+  }
+
+  .sub-title {
+    font-size: 30px;
+  }
+}
+
+@media screen and(min-width:1296px) {
+  .z-mail {
+    width: 520px;
+  }
+}
+
+@media screen and(min-width:1450px) {
+  .tinda {
+    height: 450px;
+    width: 450px;
+    top: -50px;
+    right: 7%;
+  }
+  .becom-title,
+  .sub-title {
+    text-align: center;
+  }
+}
+
+@media screen and(min-width:1652px) {
+  .becom-title {
+    font-size: 64px;
+  }
+
+  .sub-title {
+    font-size: 36px;
+  }
+  .z-mail {
+    width: 700px;
+  }
+}

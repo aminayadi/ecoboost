@@ -1,0 +1,237 @@
+<div class="header">
+  <div class="mini-nav">
+    <p class="detail-title">Shopping cart</p>
+    <span class="home-span" routerLink="/">Home </span>
+
+    <span class="prod-span"> > Shopping cart</span>
+  </div>
+</div>
+
+<!--  ******************************************************************  --->
+
+<div class="all-container">
+  <app-notification [update]="isUpdateProduct"></app-notification>
+  <div class="collection-item">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Items</th>
+          <th scope="col">Date</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">total</th>
+          <th scope="col">Final total</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let detailProd of detailCartProduct; let j=index">
+          <td>
+            <img
+              [src]="detailProd.image"
+              alt="image-prod"
+              height="120px"
+              class="img-tab"
+            />
+            <span class="title"> {{ detailProd.name }}</span>
+          </td>
+          <td class="td-item">
+            {{ detailProd.myBasket.latestModif | date: "medium" }}
+          </td>
+          <td class="td-item">{{ detailProd.pricetogo }}$</td>
+          <td class="td-item">
+            {{ detailProd.myBasket.quantity }}
+          </td>
+          <td class="td-item">
+            <strong>{{ detailProd.total }} $</strong>
+          </td>
+          <td class="td-item">
+            <span *ngIf="detailProd.reduction > 0"> <span class="chif-remis">-{{detailProd.reduction}}%</span> => </span>
+            <strong> {{fixSomme(detailProd.PriceWithRemise)}}  $</strong>
+
+            <p class="deleteElem" (click)="eliminateProduct(j)"><img src="assets/icons/close.jpg" alt="icon-delete"></p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p *ngIf="myBasket?.globalQuantity===0" class="msg-empty" >there are no items in your cart</p>
+
+    <div class="btn-update">
+      <button class="btn-empty" (click)="cleanCart()"
+      >
+        <img
+          src="assets/images/icons/cart.png"
+          alt=""
+          height="24px"
+          class="chario"
+        />
+        <span class="btn-txtb">Empty cart </span>
+      </button>
+
+      <button
+        class="btn-empty btn-empty-plus"
+        data-bs-toggle="modal"
+        data-bs-target="#shopModal"
+      >
+        <img src="assets/images/icons/refresh.png" alt="" height="24px" />
+        <span class="btn-txtb"> Update the cart </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="code-summary">
+    <div class="discount-code">
+      <div class="form-code">
+        <p class="disc-text">Discount code</p>
+        <div class="form-frp">
+          <input
+            type="text"
+            placeholder="Enter your coupon code…"
+            class="input-code"
+          />
+          <button class="apply-code">Apply coupon</button>
+        </div>
+      </div>
+
+      <div class="keep">
+        <button class="btn-keep" routerLink="/product">
+          <img src="assets/icons/back.png" alt="" />
+          Keep shopping
+        </button>
+      </div>
+    </div>
+
+    <div class="summary">
+      <div class="tab-summar">
+        <p class="sumary p-1">Summary</p>
+        <p class="subtotale pt-3 pb-3">
+          Subtotal <span class="pric"> {{ sum }} $ </span>
+        </p>
+        <p class="order-total">
+          <strong> Order total </strong>
+          <span class="pric">
+            <strong> {{ SumAfterFix }} $ </strong>
+          </span>
+        </p>
+      </div>
+
+      <div class="sub-chech-order">
+        <span class="chek-item" routerLink="/our-value/adress">
+          <img src="assets/icons/mark.png" alt="" class="mark" />
+
+          Check Out with Multiple Addresses
+        </span>
+        <button class="btn-sucss" [disabled]="myBasket?.globalQuantity===0" (click)="orderProced()">Order</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="may-also">
+    <p class="title-may">You may also like</p>
+
+    <div class="card-all">
+
+      <div class="card" *ngFor="let prod of this.listOtherProduct">
+        <img
+          [src]="prod.image"
+          alt=""
+          class="img-micro"
+        />
+        <p class="name-ki">{{prod.name}}</p>
+        <strong>{{prod.price}} $</strong>
+        <p>
+          <span class="prev-next-price">{{prod.previewsPrice}}  $</span>
+          <span class="red-z"> -{{prod.reduction}}% </span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="shopModal"
+  tabindex="-1"
+  aria-labelledby="shopModalLabel"
+  aria-hidden="true"
+>
+  <div
+    class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl"
+  >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="shopModalLabel">Update My Cart</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Items</th>
+              <th scope="col">Date</th>
+              <th scope="col">Price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">total</th>
+              <th scope="col">final total</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let detailProd of detailCartProduct; let i = index">
+              <td>
+                <img
+                  [src]="detailProd.image"
+                  alt="image-prod"
+                  height="120px"
+                  class="img-tab"
+                />
+                <span class="title"> {{ detailProd.name }}</span>
+              </td>
+              <td class="td-item">
+                {{ detailProd.myBasket.latestModif | date: "medium" }}
+              </td>
+              <td class="td-item">{{ detailProd.pricetogo }}$</td>
+              <td class="td-item">
+                <button class="counter-btn minus" (click)="decrementProduct(i)">
+                  -
+                </button>
+                {{ detailProd.myBasket.quantity }}
+                <button class="counter-btn" (click)="incrementProduct(i)">
+                  +
+                </button>
+              </td>
+              <td class="td-item">
+                <strong>{{ detailProd.total }} $</strong>
+              </td>
+              <td class="td-item">
+                <span *ngIf="detailProd.reduction > 0"> <span class="chif-remis">-{{detailProd.reduction}}%</span> => </span>
+                <strong> {{fixSomme(detailProd.PriceWithRemise)}} $</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="close()">
+          Close
+        </button>
+        <button
+        data-bs-dismiss="modal"
+          type="button"
+          class="btn btn-primary"
+          (click)="saveUpdateCart()"
+        >
+          Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
