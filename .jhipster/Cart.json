@@ -1,0 +1,30 @@
+{
+  "changelogDate": "20221004160814",
+  "clientRootFolder": "cartdb",
+  "databaseType": "mongodb",
+  "dto": "mapstruct",
+  "fields": [
+    {
+      "fieldName": "globalQuantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "codeProduct",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "quantity",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "lastestModif",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "microserviceName": "cartdb",
+  "name": "Cart",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [],
+  "service": "serviceClass"
+}
