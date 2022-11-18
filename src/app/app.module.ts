@@ -16,7 +16,10 @@ import { ResellerMapComponent } from './Components/our-values/our-value/reseller
 import { AllCountryResellerComponent } from './Components/our-values/all-country-reseller/all-country-reseller.component';
 import { CookieService } from 'ngx-cookie-service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
+
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -36,6 +39,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBTyQHGGFTooUvfR0_PpfVx8TI8Q7K-0HA',
     }),
+    FormsModule
   ],
   providers: [
     CookieService,
