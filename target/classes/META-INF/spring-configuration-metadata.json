@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "application",
+      "type": "com.ecoboost.cart.config.ApplicationProperties",
+      "sourceType": "com.ecoboost.cart.config.ApplicationProperties"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
