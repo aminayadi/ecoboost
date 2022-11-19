@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   urlBackend: 'http://localhost:8080',
 
-  urlProducts: 'http://localhost:28080/productmanagement',
+  urlProducts: 'http://54.36.180.8:8082/api/products',
   urlContact: 'http://localhost:28080/contactus',
 
   apiURL: 'http://localhost:4000/api',
