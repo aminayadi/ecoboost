@@ -13,12 +13,12 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   getProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.url}/all-product`);
+    return this.http.get<Product[]>(`${this.url}`);
   }
 
   getProductByCode(code: string): Observable<Product> { 
     return this.http
-    .get<Product>(environment.urlProducts + "/product-by-code?code=" + code);
+    .get<Product>(environment.urlProducts + "/" + code);
 
   }
 
