@@ -1,0 +1,150 @@
+<div class="header">
+  <div class="mini-nav">
+    <p class="detail-title">Register</p>
+    <span class="home-span" routerLink="/">Home> Checkout </span>
+
+    <span class="prod-span"> > Register</span>
+  </div>
+</div>
+
+<div class="all-container">
+  <p class="title-z">Create new customer account</p>
+
+  <div class="form-all">
+    <form iv class="form-input" 
+    
+    *ngIf="!isSuccessful"
+    name="form"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    #f="ngForm"
+    
+    
+    >
+
+      <div class="groupe-field">
+        <p class="title-fields">Name</p>
+        <p class="label-input">First Name *</p>
+        <input type="text" class="field-input" placeholder="First name" />
+
+        <p class="label-input">Last Name *</p>
+        <input type="text" class="field-input" placeholder="Last name"/>
+      </div>
+
+
+      <div class="groupe-field">
+
+        <p class="title-fields">Address information</p>
+
+        <p class="label-input">Company</p>
+        <input type="text" class="field-input" placeholder="Company" />
+
+        <p class="label-input">Phone Number</p>
+        <input type="text" class="field-input"  placeholder="Phone"/>
+
+        <p class="label-input">Street Address *</p>
+        <input type="text" class="field-input"  placeholder=""/>
+
+        <p class="label-input">City *</p>
+        <input type="text" class="field-input" placeholder=""/>
+
+        <p class="label-input">State/ Province *</p>
+        <select class="field-input">
+            <option value="1">Select a region, state or province.</option>
+        </select>
+
+        <p class="label-input">Zip/ Postal Code *</p>
+        <input type="text" class="field-input" placeholder=""/>
+
+        <p class="label-input">Country *</p>
+        <select class="field-input">
+          <option value="1">Ghana</option>
+      </select>
+      </div>
+
+      <div class="groupe-field">
+
+        <p class="title-fields">Login information</p>
+
+        <div class="form-group">
+        <p class="label-input">Username *</p>
+        <input type="text" class="field-input" placeholder="username"
+        class="form-control"
+        name="username"
+        [(ngModel)]="form.username"
+        required
+        minlength="3"
+        maxlength="20"
+        #username="ngModel"
+    
+        />
+
+        <div class="alert-danger" *ngIf="username.errors && f.submitted">
+          <div *ngIf="username.errors['required']">Username is required</div>
+          <div *ngIf="username.errors['minlength']">
+            Username must be at least 3 characters
+          </div>
+          <div *ngIf="username.errors['maxlength']">
+            Username must be at most 20 characters
+          </div>
+        </div>
+
+      </div> <div class="form-group">
+
+        <p class="label-input">Email *</p>
+        <input  class="field-input" placeholder="email"
+        class="form-control"
+        type="email"
+        name="email"
+        [(ngModel)]="form.email"
+        required
+        email
+        #email="ngModel"        
+        />
+        <div class="alert-danger" *ngIf="email.errors && f.submitted">
+          <div *ngIf="email.errors['required']">Email is required</div>
+          <div *ngIf="email.errors['email']">
+            Email must be a valid email address
+          </div>
+        </div>
+
+      </div> <div class="form-group">
+        <p class="label-input">Password *</p>
+        <input  class="field-input" placeholder="Password"
+        
+        type="password"
+        class="form-control"
+        name="password"
+        [(ngModel)]="form.password"
+        required
+        minlength="6"
+        #password="ngModel"
+        
+        
+        />
+
+        <div class="alert-danger" *ngIf="password.errors && f.submitted">
+          <div *ngIf="password.errors['required']">Password is required</div>
+          <div *ngIf="password.errors['minlength']">
+            Password must be at least 6 characters
+          </div>
+        </div>
+
+        <p class="label-input">Confirm Password *</p>
+        <input type="text" class="field-input" placeholder="Password confirmation"/>
+      
+      
+      </div>
+      
+      
+      </div>
+
+      <p class="btn-submit">
+        <input type="submit" class="btn-sb" value="Create an account">
+      </p>
+      <p class="already-compt"> Already have an account ?   Sign in</p>
+
+    </form>
+
+  </div>
+
+</div>

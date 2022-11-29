@@ -1,0 +1,248 @@
+.content-all {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  height: 100%;
+}
+
+.calender {
+  min-width: 440px;
+  padding-left: 20px;
+  padding-right: 5px;
+  padding-top: 20px;
+  background-color: white;
+}
+
+.day-year {
+  color: #a9a076;
+  font-size: 20px;
+}
+
+.nav-day {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 7px;
+}
+
+.to-day {
+  font-size: black;
+  font-size: 24px;
+}
+
+.back,
+.next {
+  margin-right: 10px;
+  width: 40px;
+  background-color: #a9a076;
+  height: 35px;
+  border-radius: 5px;
+  margin-left: 15px;
+  font-size: 35px;
+}
+.tick-direction {
+  height: 13px;
+  width: 13px;
+  background-color: #a9a076;
+  border: white solid 2px;
+  transform: rotate(45deg);
+  margin: 9px auto;
+  border-top: 0px;
+  border-right: 0px;
+}
+.tick-direction-nextd {
+  height: 13px;
+  width: 13px;
+  background-color: #a9a076;
+  border: white solid 2px;
+  transform: rotate(45deg);
+  margin: 9px auto;
+  border-bottom: 0px;
+  border-left: 0px;
+}
+
+td {
+  width: 57px;
+  padding-bottom: 15px;
+  font-size: 18px;
+}
+
+.select-day {
+  font-weight: bold;
+}
+
+td,
+tr {
+  text-align: center;
+}
+.time-line {
+  max-height: 500px;
+  overflow-y: hidden;
+  margin-right: 0;
+  padding-right: 0;
+}
+.card-desriptif {
+  height: 175px;
+  width: 392px;
+  background-color: rgb(195, 240, 195);
+  margin-top: 20px;
+  margin-left: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  background-color: #f1edd8;
+  border-radius: 10px;
+}
+
+.date-time {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+}
+
+.calen-cards {
+  font-size: 14px;
+}
+.timming {
+  font-size: 16px;
+}
+
+.titl {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: -7px;
+}
+
+.para {
+  margin-top: -7px;
+  font-size: 14px;
+  line-height: 24px;
+  width: 250px;
+  display: inline-block;
+}
+
+.chek {
+  margin-top: -45px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cube-chek {
+  width: 80px;
+}
+
+.cube {
+  width: 36px;
+  height: 36px;
+  background-color: #4bb02d;
+  border-radius: 7px;
+  padding-left: 8px;
+  padding-top: 5px;
+  margin-left: 25px;
+}
+
+.graph {
+  flex-grow: 1;
+}
+
+.chifres {
+  display: flex;
+  column-gap: 25px;
+  padding-left: 50px;
+}
+.item-value {
+  width: 201px;
+  height: 96px;
+  background-color: #4bb02d;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 30px;
+}
+
+.courbe {
+  margin-top: 30px;
+  height: 690px;
+  background-color: white;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.text-title {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 24px;
+  line-height: 16px;
+  text-transform: capitalize;
+  font-family: "Poppins";
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.trait {
+  height: 1px;
+  background-color: #e9ecf3;
+}
+.band-filter {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 45px;
+}
+
+.work {
+  font-size: 18px;
+}
+.work-item {
+  margin-right: 25px;
+  font-weight: bold;
+}
+.list-cal {
+  width: 125px;
+  height: 46px;
+  background-color: #f5f5f7;
+  font-weight: bold;
+  padding-left: 15px;
+  border-radius: 10px;
+}
+
+.key-graph {
+  display: flex;
+  justify-content: flex-end;
+  column-gap: 95px;
+  padding-top: 0px;
+}
+.t-h {
+  font-size: 32px;
+}
+.fact {
+  font-size: 18px;
+}
+.col1 {
+  background-color: rgb(255, 240, 241);
+}
+.col2 {
+  background-color: rgb(244, 255, 244);
+}
+
+.col3 {
+  background-color: rgb(239, 239, 255);
+}
+.c-1 {
+  color: #B79906;
+}
+.c-2 {
+  color: #4BB02D;
+}
+.c-3 {
+  color: #484ABB;
+}
+.orang,.gren {
+  font-size: 100px;
+  line-height: 40px;
+}
+.orang {
+  color: orange;
+}
+.gren {
+  color: green;
+}

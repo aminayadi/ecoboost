@@ -1,0 +1,162 @@
+.header {
+  position: relative;
+  background-image: url("/assets/images/header/detailprod.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 283px;
+}
+.mini-nav {
+  position: absolute;
+  top: 34px;
+  left: 24px;
+  color: #c0c0c0;
+}
+.detail-title {
+  font-family: "Poppins-sem-bold";
+  font-size: 34px;
+  line-height: 28px;
+  letter-spacing: -0.015em;
+  color: #ffd20b;
+}
+.prod-span {
+  color: white;
+  margin-left: 5px;
+}
+.home-span {
+  cursor: pointer;
+}
+
+.home-span:hover {
+  color: yellow;
+}
+
+.all-container {
+  width: 95%;
+  margin: 5px auto;
+  height: 1595px;
+  margin-bottom: 280px;
+}
+
+.title-z {
+  padding-top: 20px;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 48px;
+  /* identical to box height */
+
+  letter-spacing: -0.015em;
+
+  color: #000000;
+}
+
+.form-all {
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.groupe-field {
+  margin-top: 40px;
+}
+
+.title-fields {
+  font-family: "Poppins-sem-bold";
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+
+  letter-spacing: -0.015em;
+
+  color: #000000;
+}
+
+.label-input {
+  font-family: "Poppins-sem-bold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  color: #51504f;
+  margin-bottom: 2px;
+}
+.field-input {
+  margin-top: 5px;
+  margin-bottom: 16px;
+  padding: 14px;
+  width: 100%;
+  height: 48px;
+
+  background: #f9f9f9;
+  /* Stroke */
+
+  border: 1px solid #e9ebec;
+  border-radius: 4px;
+}
+
+.field-input:focus {
+  outline-color: #96d682;
+}
+
+.btn-submit {
+  padding-top: 100px;
+  padding-bottom: 27px;
+}
+
+.btn-sb {
+  height: 48px;
+  left: 748px;
+  top: 1835px;
+  background: #4cb12e;
+  border-radius: 4px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+
+  text-align: center;
+  border: none;
+  color: #ffffff;
+}
+.btn-sb:hover {
+  background: #33851a;
+}
+@media screen and(min-width:318px) {
+
+  .btn-sb {
+    width: 100%;
+  }
+  .title-z {
+    font-size: 18px;
+  }
+}
+@media screen and(min-width:430px) {
+  .field-input {
+    width: 424px;
+  }
+
+  .form-input {
+    width: 430px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and(min-width:900px) {
+  .mini-nav {
+    top: 147px;
+    left: 184px;
+  }
+  .title-z {
+    font-size: 32px;
+  }
+
+  .all-container {
+    width: 75%;
+    margin: 5px auto 280px auto;
+  }
+}

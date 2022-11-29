@@ -1,0 +1,195 @@
+<div class="zoneprofile customer">
+  <div class="text-space">
+    <div class="icon-user">
+      <img src="assets/icons/customspace.png" alt="" />
+    </div>
+    <div class="text-contentp">
+      <span> Customer</span>
+      <p>space</p>
+    </div>
+  </div>
+</div>
+
+<div class="menu">
+  <ul class="ul">
+    <li class="li">
+      <div class="section-list">
+        <div class="text-title" routerLink="./customer-dashboard">
+          <img src="assets/icons/dashboard.png" alt="" /> Dashboard
+        </div>
+      </div>
+    </li>
+
+    <li class="li">
+      <div class="section-list" (click)="accordOrder()">
+        <div class="text-title">
+          <img src="assets/icons/Boxes.png" alt="" /> My Orders
+        </div>
+        <div
+          [ngClass]="{ flechaccord: true, revers: displayOrder === true }"
+        ></div>
+      </div>
+
+      <ul class="notflex" *ngIf="displayOrder">
+        <li class="subli"  routerLink="./order/custom/order">New Order</li>
+        <li class="subli" routerLink="./order/custom/pending-order">Pending Orders</li>
+      </ul>
+    </li>
+
+    <li class="li bns">
+        <div class="text-title" routerLink="./account">
+          <img src="assets/icons/Form.png" alt="" />My Personal Informations
+      </div>
+    </li>
+    <li class="li bns" routerLink="./contact/contact-mail">
+      <div><img src="assets/icons/contact.png" alt="" /> Contact</div>
+    </li>
+
+    <li class="li bns" routerLink="./claim/my-claim">
+      <div><img src="assets/icons/claim.png" alt="" /> My Claims</div>
+    </li>
+  </ul>
+</div>
+<!--
+
+
+-->
+
+<!--
+<div class="zoneprofile agent">
+  <div class="text-space">
+    <div class="icon-user">
+      <img src="assets/icons/agentspace.png" alt="" />
+    </div>
+    <div class="text-contentp">
+      <span> Agent</span>
+      <p>space</p>
+    </div>
+  </div>
+</div>
+<div class="menu">
+  <ul class="ul">
+    <li class="li">
+      <div class="section-list" (click)="accordDash()">
+        <div class="text-title">
+          <img src="assets/icons/darhboard.png" alt="" /> Dashboard
+        </div>
+        <div
+          [ngClass]="{ flechaccord: true, revers: displayDash === true }"
+        ></div>
+      </div>
+
+      <ul class="notflex" *ngIf="displayDash">
+        <li class="subli">Today's Expenses</li>
+        <li class="subli" routerLink="./dashboard/today-sales">
+          Today's sales
+        </li>
+        <li class="subli">Products to reorder</li>
+        <li class="subli">Pending Orders</li>
+      </ul>
+    </li>
+
+    <li class="li">
+      <div class="section-list" (click)="accordOrder()">
+        <div class="text-title">
+          <img src="assets/icons/orders.png" alt="" /> Orders
+        </div>
+        <div
+          [ngClass]="{ flechaccord: true, revers: displayOrder === true }"
+        ></div>
+      </div>
+
+      <ul class="notflex" *ngIf="displayOrder">
+        <li class="subli" routerLink="./order/pending">Pending orders</li>
+        <li class="subli" routerLink="./order/ready">Ready for delivery</li>
+        <li class="subli" routerLink="./order/all">All orders</li>
+      </ul>
+    </li>
+
+    <li class="li">
+      <div class="section-list" (click)="accordPurchase()">
+        <div class="text-title">
+          <img src="assets/icons/basket.png" alt="" /> Purchase
+        </div>
+        <div
+          [ngClass]="{ flechaccord: true, revers: displayPurchase === true }"
+        ></div>
+      </div>
+      <ul class="notflex" *ngIf="displayPurchase">
+        <li class="subli" routerLink="./purchase/my-order">My order</li>
+        <li class="subli" routerLink="./purchase/my-inventory">Inventory</li>
+        <li class="subli" routerLink="./purchase/all-products">All products</li>
+      </ul>
+    </li>
+
+    <li class="li bns" routerLink="./bonus/bonus-tracking">
+      <div><img src="assets/icons/bonus.png" alt="" /> Bonus Tracking</div>
+    </li>
+
+    <li class="li bns" routerLink="./contact/contact-mail">
+      <div><img src="assets/icons/contact.png" alt="" /> Contact</div>
+    </li>
+  </ul>
+</div>
+
+
+
+-->
+<!--
+
+<div class="zoneprofile delivery">
+  <div class="text-space">
+    <div class="icon-user">
+      <img src="assets/icons/deliveryspace.png" alt="" />
+    </div>
+    <div class="text-contentp">
+      <span> Delivery</span>
+      <p>space</p>
+    </div>
+  </div>
+</div>
+
+<div class="menu">
+  <ul class="ul">
+    <li class="li">
+      <div class="section-list">
+        <div class="text-title" routerLink="./delivery-dashboard">
+          <img src="assets/icons/dashboard.png" alt="" /> Dashboard
+        </div>
+      </div>
+    </li>
+    <li class="li">
+      <div class="section-list" (click)="accordPurchase()">
+        <div class="text-title">
+          <img src="assets/icons/dreq.png" alt="" />Delivery request
+        </div>
+      </div>
+    </li>
+    <li class="li">
+      <div class="section-list" (click)="accordPurchase()">
+        <div class="text-title">
+          <img src="assets/icons/dprog.png" alt="" />Delivery in progress
+        </div>
+      </div>
+    </li>
+
+    <li class="li">
+      <div class="section-list" (click)="accordPurchase()">
+        <div class="text-title">
+          <img src="assets/icons/dcomp.png" alt="" /> Delivery complete
+        </div>
+      </div>
+    </li>
+
+    <li class="li bns" routerLink="./contact/contact-mail">
+      <div><img src="assets/icons/contact.png" alt="" /> Contact</div>
+    </li>
+
+    <li class="li bns" routerLink="./claim/my-claim">
+      <div><img src="assets/icons/claim.png" alt="" /> My Claims</div>
+    </li>
+  </ul>
+</div>
+
+
+-->

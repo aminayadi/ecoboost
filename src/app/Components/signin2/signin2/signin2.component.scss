@@ -1,0 +1,141 @@
+.all-container {
+  width: 100%;
+  padding: 5px;
+  padding-top: 88px;
+}
+
+.content-info {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  margin-bottom: 120px;
+}
+
+.title-part {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 48px;
+  letter-spacing: -0.015em;
+  padding-top: 40px;
+  padding-bottom: 16px;
+}
+.register-title {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+  /* identical to box height */
+  letter-spacing: -0.015em;
+}
+
+.some-text {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  letter-spacing: -0.015em;
+
+  color: #51504f;
+}
+.form-input {
+  margin-top: 20px;
+}
+label {
+  display: block;
+
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #51504f;
+}
+.input-field {
+  width: 270px;
+  height: 48px;
+  background: #ffffff;
+  border: 1px solid #e9ebec;
+  border-radius: 4px;
+  outline-color: #8adf70;
+}
+
+.bht-action {
+  text-align: right;
+}
+.btn-signin {
+  width: 95px;
+  height: 48px;
+  font-size: 16px;
+  line-height: 24px;
+  border: none;
+  text-align: center;
+  color: #ffffff;
+  background: #4cb12e;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+.btn-signin:hover {
+  background-color: #8ed878;
+}
+.creat {
+  width: 193px;
+}
+
+.bht-create {
+  padding-top: 75px;
+  text-align: center;
+}
+.red {
+  color: red;
+}
+@media screen and (min-width: 500px) {
+  .all-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .content-info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 30px;
+  }
+
+  .register-part,
+  .create-account {
+    width: 500px;
+    padding: 25px;
+  }
+
+  .input-field,
+  .bht-action {
+    width: 424px;
+  }
+}
+
+@media screen and (min-width: 1346px) {
+  .all-container {
+    width: 1245px;
+  }
+
+  .content-info {
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left: 90px;
+    padding-top: 40px;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .ligne-vertical {
+    width: 1px;
+    height: 350px;
+    background: #d9d9d9;
+  }
+}

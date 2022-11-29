@@ -1,0 +1,189 @@
+agm-map {
+  width: 100%;
+  height: 500px;
+}
+
+
+.header {
+  position: relative;
+  background-image: url("/assets/images/header/detailprod.jpg");
+  background-size: cover;
+  height: 283px;
+}
+.mini-nav {
+  position: absolute;
+  top: 145px;
+  left: 10%;
+  color: red;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.015em;
+  color: #c0c0c0;
+}
+.detail-title {
+  font-family: "Poppins-sem-bold";
+  font-size: 34px;
+  line-height: 28px;
+  letter-spacing: -0.015em;
+  color: #ffd20b;
+}
+.prod-span {
+  color: white;
+  margin-left: 5px;
+}
+.home-span {
+  cursor: pointer;
+}
+
+.home-span:hover {
+  color: yellow;
+}
+
+.description {
+  font-family: "Poppins-r";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 20px;
+  letter-spacing: -0.015em;
+  color: #000000;
+  padding-left: 10px;
+  margin-top: 94px;
+  margin-bottom: 32px;
+}
+
+.description::after {
+  display: block;
+  content: "";
+  width: 40px;
+  height: 5px;
+  background-color: #ffd20b;
+}
+
+.zon-3,
+.flx-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.zon-3 {
+  row-gap: 25px;
+  padding-left: 10px;
+}
+.Acc-item {
+  font-family: "Poppins-r";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 54px;
+  /* identical to box height */
+
+  letter-spacing: -0.015em;
+
+  color: #b2b2b2;
+}
+.facteur {
+  font-size: 18px;
+}
+.info {
+  font-size: 15px;
+  font-family: "Poppins-r";
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: -0.015em;
+}
+.zon-3 .flx-item:last-child > .info {
+  text-decoration-line: underline;
+}
+
+.clic-zon {
+  padding-top: 67px;
+  padding-bottom: 32px;
+
+  .msg-click,
+  .zomm-map {
+    text-align: center;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    color: #4bb02d;
+  }
+
+  .zomm-map {
+    text-align: center;
+    font-family: "Poppins-r";
+
+    color: #999997;
+  }
+}
+
+
+.become {
+  margin-top: 120px;
+  padding-top: 270px;
+  transform: translateY(100px);
+}
+
+
+@media screen and(min-width:598px) {
+  .mini-nav {
+    top: 74px;
+    left: 24px;
+  }
+  .zon-3,
+  .description {
+    padding-left: 100px;
+  }
+}
+
+@media screen and(min-width:900px) {
+  .mini-nav {
+    top: 147px;
+    left: 184px;
+  }
+  .zon-3,
+  .description {
+    padding-left: 0px;
+  }
+  .description {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  .Acc-item {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  .locator-description {
+    width: 95%;
+    margin: 10px auto;
+    //  padding-bottom: 32px;
+  }
+  .zon-3 {
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 120px;
+  }
+
+  .msg-click,
+  .zomm-map {
+    margin-bottom: 2px;
+    margin-top: 2px;
+  }
+}
+
+@media screen and(min-width:1380px) {
+  .locator-description {
+    width: 1300px;
+  }
+}

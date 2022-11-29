@@ -1,0 +1,22 @@
+
+<p class="barre-notif" *ngIf="add">
+  <img src="assets/icons/tick.png" alt="" />
+  <span class="message-notif">
+    You added <strong> {{nbreItem}} {{productName}}  </strong> to your shopping cart.
+  </span>
+</p>
+
+
+<p class="barre-notif update" *ngIf="update">
+  <img src="assets/icons/tick.png" alt="" />
+  <span class="message-notif">
+    Product Successfully updated
+  </span>
+</p>
+
+
+<p class="barre-notif update" *ngIf="delete">
+  <img src="assets/icons/tick.png" alt="" />
+  <span class="message-notif">
+    Product removed from shopping cart  </span>
+</p>

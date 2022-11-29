@@ -1,0 +1,265 @@
+.header {
+  position: relative;
+  background-image: url("../../../assets/images/header/detailprod.jpg");
+  background-size: cover;
+  height: 283px;
+}
+.mini-nav {
+  position: absolute;
+  top: 145px;
+  left: 10%;
+  color: red;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.015em;
+  color: #c0c0c0;
+}
+.detail-title {
+  font-family: "Poppins-sem-bold";
+  font-size: 34px;
+  line-height: 28px;
+  letter-spacing: -0.015em;
+  color: #ffd20b;
+}
+.prod-span {
+  color: white;
+  margin-left: 5px;
+}
+.home-span {
+  cursor: pointer;
+}
+
+.home-span:hover {
+  color: yellow;
+}
+
+.contactcontent {
+  min-height: 1100px;
+  padding-bottom: 10px;
+}
+
+.item-contact {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-name {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 36px;
+  /* identical to box height */
+
+  letter-spacing: -0.015em;
+}
+.item2 {
+  width: 100%;
+}
+.conct-us,
+.icon-social-netwrk {
+  text-align: center;
+}
+.icon-social-netwrk {
+  padding-top: 15px;
+}
+.ico-pt {
+  cursor: pointer;
+  margin-right: 14px;
+}
+.cnct-us {
+  font-family: "Poppins";
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  letter-spacing: -0.015em;
+  color: #000000;
+}
+.t1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.015em;
+  margin-bottom: 2px;
+  color: #000000;
+}
+.unity {
+  min-height: 80px;
+  margin-bottom: 5px;
+  padding: 10px 20px 10px 20px;
+  gap: 10px;
+  align-items: center;
+  overflow: hidden;
+
+  .messageValidator {
+    width: 100%;
+    padding-left: 10px;
+    color: red;
+    margin-bottom: 0px;
+  }
+}
+
+.bt-2 {
+  padding-bottom: 70px;
+}
+.label-field {
+  font-family: "Poppins-sem-bold";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: #51504f;
+}
+
+.invalidStyle {
+  border: 1px solid rgb(212, 7, 7);
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid rgba(142, 230, 70, 0.5);
+  box-shadow: 0px 0px 1px 2px rgba(216, 232, 250, 0.3);
+}
+
+.fieldinput {
+  height: 48px;
+  width: 100%;
+  outline: none;
+
+  background: #ffffff;
+  border: 1px solid #e9ebec;
+  border-radius: 4px;
+
+  padding: 10px 20px;
+  font-family: "Poppins";
+  font-style: normal;
+  line-height: 1.625;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgb(15, 15, 15);
+}
+
+.areatext {
+  outline: none;
+  background: #ffffff;
+  border: 1px solid #e9ebec;
+  border-radius: 4px;
+  width: 100%;
+  padding: 10px 20px;
+  font-family: "Poppins";
+  font-style: normal;
+  line-height: 1.625;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgb(15, 15, 15);
+}
+
+.capetcha {
+  min-height: 150px;
+}
+
+.btnsave {
+  margin: 0 auto;
+}
+
+.unity02 {
+  min-height: 100px;
+}
+
+.btnsend {
+  width: 161px;
+  height: 48px;
+  border-radius: 4px;
+  font-family: "Poppins-sem-bold";
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #ffffff;
+  border: none;
+  background: #4cb12e;
+  transition: 0.6s;
+}
+
+.btnsend:hover {
+  cursor: pointer;
+}
+
+.sendValid {
+  background-color: #c2e9d1;
+  color: rgb(33, 153, 29);
+  font-weight: 500;
+  margin-top: 10px;
+  border-left: #0c6438 solid 5px;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: 20px;
+}
+
+.sendInValid {
+  background-color: #e5c0c4;
+  color: rgb(204, 63, 63);
+  font-weight: 500;
+  margin-top: 10px;
+  border-radius: 5px;
+  width: 80%;
+  margin-left: 20px;
+  padding-left: 10px;
+}
+
+.spinner-border {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+@media screen and(min-width:598px) {
+  .mini-nav {
+    top: 74px;
+    left: 24px;
+  }
+
+  .item-contact {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: row;
+    column-gap: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  .fieldinput,
+  .areatext {
+    width: 608px;
+  }
+}
+
+@media screen and (min-width: 766px) {
+  .item2 {
+    width: 640px;
+    margin: 20px auto;
+  }
+}
+
+@media screen and(min-width:900px) {
+  .mini-nav {
+    top: 147px;
+    left: 184px;
+  }
+}
+
+@media screen and(min-width:956px) {
+  .item-contact {
+    column-gap: 140px;
+    margin-bottom: 40px;
+  }
+}

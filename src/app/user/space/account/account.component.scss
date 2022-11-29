@@ -1,0 +1,351 @@
+* {
+  font-family: 'Poppins';
+}
+
+.all-content {
+  width: 100%;
+  background-color: white;
+}
+
+.main-content {
+  .text-title {
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    font-size: 24px;
+    line-height: 16px;
+    text-transform: capitalize;
+  }
+
+  .trait {
+    height: 1px;
+    width: 95%;
+    margin-left: 19px;
+    background-color: #E9ECF3;
+  }
+}
+
+.content {
+  width: 100%;
+  padding: 0 0 0 10%;
+}
+
+.data-formulaire {
+  padding-top: 15px;
+  font-size: 13px;
+  color: #B4B9BD;
+  padding-bottom: 15px;
+}
+
+.field {
+  padding-bottom: 35px;
+}
+
+.disply-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.label-inline-right {
+  display: inline;
+  margin-right: 10px;
+}
+
+.label-inline-left {
+  display: inline;
+  margin-left: 10px;
+}
+
+.radio-input {
+  vertical-align: middle;
+}
+
+.gend {
+  width: 350px;
+  display: flex;
+  padding-top: 7px;
+}
+
+.gendr1 {
+  width: 100px;
+}
+
+.text-input {
+  width: 80%;
+  height: 45px;
+  color: #B4B9BD;
+  border: rgba(233, 235, 236,60%) solid 1px;
+  border-radius: 8px;
+  padding-left: 10px;
+}
+
+.cray-edit {
+  margin-left: 7px;
+  vertical-align: sub;
+}
+
+
+.birthday {
+  display: flex;
+  flex-direction: column;
+  row-gap: 14px;
+  align-items: left;
+}
+
+.item-input {
+  width: 90px;
+  height: 40px;
+  border: #B4B9BD solid 1px;
+
+}
+
+.day,
+.mouth,
+.year {
+  width: 100px;
+  border-radius: 8px;
+}
+
+.action-btn {
+  text-align: right;
+  padding-right: 30px;
+  padding-top: 20px;
+}
+
+.btn-save {
+  width: 96px;
+  height: 30px;
+  background: #DAD7D7;
+  border-radius: 10px;
+  border: none;
+  outline-color: #DAD7D7;
+  color: white;
+}
+
+
+
+@media screen and (min-width:383px) {
+
+  .birthday {
+    flex-direction: row;
+    column-gap: 8px
+  }
+}
+
+@media screen and (min-width:587px) {
+
+  .content {
+    width: 580px;
+    padding: 0 0 0 10%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .text-input {
+    width: 420px;
+    height: 50px;
+    color: #B4B9BD;
+    border: #B4B9BD solid 1px;
+    border-radius: 8px;
+  }
+
+}
+
+@media screen and (min-width:1000px) {
+
+  .content {
+    width: 1000px;
+    padding: 30px 0 0 10px;
+    margin-left: 0;
+    margin-right: 0;
+    font-size: 16px;
+  }
+
+  .text-input {
+    width: 448px;
+    color: #B4B9BD;
+    border: #B4B9BD solid 1px;
+    border-radius: 7px;
+  }
+
+  .data-formulaire {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    row-gap: 8px;
+
+  }
+
+  .gend {
+    width: 480px;
+    display: flex;
+    padding-top: 7px;
+  }
+
+  .birthday {
+    column-gap: 16px
+  }
+
+  .adresseField {
+    width: 900px;
+  }
+
+  .action-btn {
+    width: 100%;
+    padding-top: 90px;
+  }
+
+}
+
+@media screen and (min-width:1218px) {
+
+  .content {
+    width: 1100px;
+    padding: 30px 10px 0 30px;
+    margin-left: 0;
+  }
+
+  .field {
+    width: 580px;
+  }
+
+  .data-formulaire {
+    width: 1218px;
+  }
+
+  .decal-right {
+    margin-left: 70px;
+  }
+
+  .adresseField {
+    width: 1100px;
+  }
+
+  .action-btn {
+    width: 90%;
+    padding-top: 90px;
+  }
+
+}
+
+@media screen and (min-width:1440px) {
+
+  .content {
+    width: 746px;
+    padding: 0 0 0 10px;
+
+  }
+
+  .data-formulaire {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+    width: 740px;
+
+  }
+
+  .action-btn {
+    width: 80%;
+    padding-top: 90px;
+  }
+
+  .field {
+    //  background-color: green;
+    width: 365px;
+  }
+
+  .decal-right {
+    margin-left: 0px;
+  }
+
+  .text-input {
+    width: 330px;
+    height: 50px;
+    color: #B4B9BD;
+    border: #B4B9BD solid 1px;
+    border-radius: 8px;
+  }
+
+
+}
+
+@media screen and (min-width:1480px) {
+
+  .content {
+    width: 510px;
+  }
+
+  .field {
+    width: 370px;
+  }
+
+  .data-formulaire {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    row-gap: 10px;
+    width: 750px;
+
+
+  }
+
+  .gend {
+    width: 200px;
+    display: flex;
+    padding-top: 7px;
+  }
+
+  .decal-right {
+    margin-left: 0px;
+  }
+
+  .text-input {
+    width: 320px;
+    color: #B4B9BD;
+    border: #B4B9BD solid 1px;
+    border-radius: 8px;
+  }
+
+  .decal-right {
+    margin-left: 0px;
+  }
+
+  .adresseField {
+    width: 700px;
+  }
+
+  .action-btn {
+    width: 80%;
+    padding-top: 90px;
+  }
+
+}
+
+
+@media screen and (min-width:1572px) {
+
+  .content {
+    width: 1100px;
+    margin-right: 0;
+    padding-left: 30px;
+  }
+
+  .data-formulaire {
+    width: 1080px;
+    margin-right: 0;
+  }
+
+  .field {
+    width: 530px;
+  }
+
+  .text-input {
+    width: 470px;
+  }
+
+  .action-btn {
+    width: 97%;
+
+  }
+}

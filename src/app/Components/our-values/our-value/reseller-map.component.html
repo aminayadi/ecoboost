@@ -1,0 +1,58 @@
+<div class="header">
+  <div class="mini-nav">
+    <p class="detail-title">Our values</p>
+    <span class="home-span" routerLink="/">Home > </span>
+    <span class="home-span" routerLink="/our-value">Our values </span>
+    <span class="prod-span"> > Reseller locator map </span>
+  </div>
+</div>
+
+<div class="locator-description">
+  <p class="description">Reseller locator map (Ghana)</p>
+
+  <div class="zon-3">
+    <div class="flx-item it1">
+      <span class="Acc-item"> Accra </span>
+      <strong class="facteur"> ADDRESS</strong>
+      <span class="info"> 2nd Street Manu Avenue, Accra. Ghana </span>
+    </div>
+
+    <div class="flx-item pt-5">
+      <strong class="facteur"> PHONE </strong>
+      <span class="info"> +233 (0)30 2436887 </span>
+      <span class="info"> +233 (0)55 2830258</span>
+      <span class="info"> +233 (0)55 9709458</span>
+    </div>
+
+    <div class="flx-item pt-5">
+      <strong class="facteur"> EMAIL </strong>
+      <span class="info"> ecoboostxb@lumgint.com </span>
+    </div>
+  </div>
+
+  <div class="clic-zon">
+    <p class="msg-click">Click on EcoBoost Icon for contact details</p>
+    <p class="zomm-map">(Zoom in MAP for details)</p>
+  </div>
+</div>
+
+<div class="map">
+  <agm-map [latitude]="lat" [longitude]="lng" [zoom]="5.8">
+    <ng-container *ngFor="let c of coordinates">
+      <agm-marker
+        [latitude]="c.lat"
+        [longitude]="c.lng"
+        [latitude]="c.lat"
+        [longitude]="c.lng"
+        iconHeight="70"
+        iconWidth="70"
+      >
+        <agm-info-window> {{ c.adress }}</agm-info-window>
+      </agm-marker>
+    </ng-container>
+  </agm-map>
+</div>
+
+<div class="become">
+  <app-becom-ecoboost> </app-becom-ecoboost>
+</div>

@@ -1,0 +1,213 @@
+<div class="header">
+  <div class="mini-nav">
+    <p class="detail-title">Contact Us</p>
+    <span class="home-span" routerLink="/">Home </span>
+
+    <span class="prod-span"> > Contact Us</span>
+  </div>
+</div>
+
+
+<div class="corBody">
+  <div class="item-contact">
+
+    <div class="item-1">
+      <img src="assets/icons/phone_light.png" alt="" width="88" />
+      <p><strong class="item-name">Phone</strong></p>
+      <p class="t1">+233 (0)30 2436887</p>
+      <p class="t1">+233 (0)55 2830258</p>
+      <p class="t1">+233 (0)55 2830258</p>
+    </div>
+
+    <div class="item-1">
+      <img src="assets/icons/pin_light.png" alt="" width="88" />
+      <p><strong class="item-name">Address</strong></p>
+      <p class="t1">
+        2nd Street Manu Avenue,<br />
+        Accra. Ghana
+      </p>
+    </div>
+
+    <div class="item-1">
+      <img src="assets/icons/Message_light.png" alt="" width="88" />
+      <p><strong class="item-name">Email</strong></p>
+      <p class="t1">ecoboost@lumgint.com</p>
+    </div>
+  </div>
+
+  <div class="contactcontent">
+    <form
+      class="item2"
+      [formGroup]="contactForm"
+      (ngSubmit)="sendMessage(contag)"
+      #contag="ngForm"
+    >
+      <p class="sendValid" *ngIf="sendValid">
+        <img src="assets/icons/ticket.svg" /> votre message à été réçu de notre
+        part, merci !!
+      </p>
+      <p class="sendInValid" *ngIf="sendInValid">{{ errormessage }}</p>
+      <div class="unity unity2">
+        <p class="label-field">Full name *</p>
+        <input
+          type="text"
+          placeholder="Full Name"
+          [ngClass]="{
+            'fieldinput defaultStyle': true,
+            invalidStyle:
+              ((contactForm.controls['fullName'].touched ||
+                contactForm.controls['fullName'].dirty) &&
+                contactForm.controls['fullName'].invalid) ||
+              (contactForm.controls['fullName'].invalid && contag.submitted)
+          }"
+          formControlName="fullName"
+          required
+        />
+
+        <p
+          class="messageValidator"
+          *ngIf="
+            ((contactForm.controls['fullName'].touched ||
+              contactForm.controls['fullName'].dirty) &&
+              contactForm.controls['fullName'].invalid) ||
+            (contactForm.controls['fullName'].invalid && contag.submitted)
+          "
+        >
+          Required field must be filled in. *
+        </p>
+      </div>
+
+      <div class="unity unity2">
+        <p class="label-field">Email *</p>
+        <input
+          type="text"
+          placeholder="Your Email"
+          [ngClass]="{
+            'fieldinput defaultStyle': true,
+            invalidStyle:
+              ((contactForm.controls['email'].touched ||
+                contactForm.controls['email'].dirty) &&
+                contactForm.controls['email'].invalid) ||
+              (contactForm.controls['email'].invalid && contag.submitted)
+          }"
+          formControlName="email"
+          formControlName="email"
+          required
+        />
+
+        <p
+          class="messageValidator"
+          *ngIf="
+            ((contactForm.controls['email'].touched ||
+              contactForm.controls['email'].dirty) &&
+              contactForm.controls['email'].invalid) ||
+            (contactForm.controls['email'].invalid && contag.submitted)
+          "
+        >
+          Required field must be filled in. *
+        p>
+      </div>
+
+      <div class="unity unity2">
+        <p class="label-field">Subject</p>
+
+        <input
+          type="text"
+          placeholder="Object"
+          [ngClass]="{
+            'fieldinput defaultStyle': true,
+            invalidStyle:
+              ((contactForm.controls['objectContact'].touched ||
+                contactForm.controls['objectContact'].dirty) &&
+                contactForm.controls['objectContact'].invalid) ||
+              (contactForm.controls['objectContact'].invalid &&
+                contag.submitted)
+          }"
+          formControlName="objectContact"
+          formControlName="objectContact"
+          required
+        />
+
+        <p
+          class="messageValidator"
+          *ngIf="
+            ((contactForm.controls['objectContact'].touched ||
+              contactForm.controls['objectContact'].dirty) &&
+              contactForm.controls['objectContact'].invalid) ||
+            (contactForm.controls['objectContact'].invalid && contag.submitted)
+          "
+        >
+          Required field must be filled in. *
+        </p>
+      </div>
+
+      <div class="unity unity2">
+        <p class="label-field">Message *</p>
+
+        <textarea
+          class="areatext"
+          rows="10"
+          placeholder="Message"
+          [ngClass]="{
+            'txtarea defaultStyle': true,
+            invalidStyle:
+              ((contactForm.controls['content'].touched ||
+                contactForm.controls['content'].dirty) &&
+                contactForm.controls['content'].invalid) ||
+              (contactForm.controls['content'].invalid && contag.submitted)
+          }"
+          formControlName="content"
+          formControlName="content"
+          required
+        ></textarea>
+
+        <p
+          class="messageValidator"
+          *ngIf="
+            ((contactForm.controls['content'].touched ||
+              contactForm.controls['content'].dirty) &&
+              contactForm.controls['content'].invalid) ||
+            (contactForm.controls['content'].invalid && contag.submitted)
+          "
+        >
+          Required field must be filled in. *
+        </p>
+      </div>
+
+      <div class="unity bt-2">
+        <ngx-recaptcha2
+          #captchaElem
+          [siteKey]="key"
+          (success)="handleSuccess($event)"
+          size="normal"
+          hl="en"
+          theme="light"
+          type="image"
+          formControlName="recaptcha"
+        >
+        </ngx-recaptcha2>
+      </div>
+      <div class="unity02">
+        <div class="text-center">
+          <input
+            type="submit"
+            class="btnsend"
+            value="Send message"
+            [ngStyle]="{ cursor: cursor }"
+          />
+        </div>
+      </div>
+    </form>
+
+    <div class="conct-us">
+      <span class="cnct-us">Connect with us !</span>
+    </div>
+    <p class="icon-social-netwrk">
+      <img src="assets/icons/facebook.png" alt="" class="ico-pt"/>
+      <img src="assets/icons/twitter.png" alt="" class="ico-pt"/>
+      <img src="assets/icons/instagram.png" alt="" class="ico-pt"/>
+      <img src="assets/icons/youtube.png" alt="" class="ico-pt"/>
+    </p>
+  </div>
+</div>
+<!-- ************************************************** Content de input *********************************************  -->
