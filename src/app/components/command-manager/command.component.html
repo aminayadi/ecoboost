@@ -1,0 +1,181 @@
+<p-toast></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
+
+<p-dialog header="Add New Stock Request" modal="true" [(visible)]="displayNewRequestStock"
+	[style]="{width: '80vw',height: '30vw'}">
+	<form [formGroup]="addNewRequestStockForm" (ngSubmit)="onSubmitaddNewRequestStockForm()" class="row g-3">
+		<div class="col-6">
+			<label for="listOfProducts" class="form-label">Product</label>
+			<p-dropdown id="listOfProducts" formControlName="selectedProduct" [options]="availableProducts"
+				optionLabel="name" [style]="{'width':'100%'}" placeholder="Select a Product">
+
+				<ng-template let-product pTemplate="item">
+					<div>
+
+						<div>{{product.name}}</div>
+					</div>
+				</ng-template>
+
+
+			</p-dropdown>
+
+		</div>
+
+		<div class="col-6">
+			<label for="inputAddress" class="form-label">stockQuantityInCarton</label>
+			<input type="text" class="form-control" id="stockQuantityInCarton" formControlName="stockQuantityInCarton">
+		</div>
+		<div class="col-6">
+			<label for="lastName" class="form-label">stockQuantitySingle</label>
+			<input type="text" class="form-control" id="stockQuantitySingle" formControlName="stockQuantitySingle">
+		</div>
+
+
+		<div class="col-12">
+			<button type="submit" class="btn btn-primary">Save</button>
+		</div>
+
+	</form>
+</p-dialog>
+<p-dialog header="Associate  Command to a delivery" modal="true" [(visible)]="showAssociateToDelivery"
+	[style]="{width: '30vw',height: '15vw'}">
+	<div class="col-6">
+	<p-dropdown id="listOfDeliveries" [(ngModel)]="selectedDelivery" [options]="listOfDeliveries" optionLabel="name"
+		[style]="{'width':'100%'}" placeholder="Select a Delivery">
+
+		<ng-template let-delivery pTemplate="item">
+			<div>
+
+				<div>{{delivery.email}}</div>
+			</div>
+		</ng-template>
+
+
+	</p-dropdown>
+	</div>
+	<div class="col-6">
+	<button pButton  (onClick)="onClickAssociateDeliveryToStockRequest()" class="btn btn-primary">Select</button>
+	</div>
+</p-dialog>
+
+<p-table #dtRequestStock [value]="stockRequests" dataKey="id" [rows]="10" [loading]="loadingTable" [rowHover]="true"
+	styleClass="p-datatable-gridlines" [paginator]="true" (onPage)="onPage($event)" [globalFilterFields]="['product'  ]"
+	responsiveLayout="scroll">
+	<ng-template pTemplate="caption">
+		<div class="flex justify-content-between flex-column sm:flex-row">
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<button pButton label="Clear" class="p-button-outlined mb-2" icon="pi pi-filter-slash"
+							(click)="clear(dt1)"></button>
+
+					</div>
+					<div class="col" *ngIf="!isAdmin" > 
+						<button pButton label="New Stock Request" [(visible)]="displayNewRequestStockButton"
+							class="p-button-outlined mb-2" (click)="displayNewRequestStock=true"
+							icon="pi pi-filter-slash"></button>
+
+					</div>
+
+				</div>
+			</div>
+			<span class="p-input-icon-left mb-2">
+				<i class="pi pi-search"></i>
+				<input pInputText type="text" #filter (input)="dt1.filterGlobal($event.target.value, 'contains')"
+					placeholder="Search Keyword" class="w-full" />
+			</span>
+		</div>
+
+	</ng-template>
+	<ng-template pTemplate="header">
+		<tr>
+			<th>
+				<div class="flex justify-content-between align-items-center">
+					product
+					<p-columnFilter type="text" field="name" display="menu" placeholder="Search by product">
+					</p-columnFilter>
+				</div>
+			</th>
+
+			<th>
+				<div class="flex justify-content-between align-items-center">
+					stockQuantityInCarton
+					<p-columnFilter type="text" field="name" display="menu">
+					</p-columnFilter>
+				</div>
+			</th>
+			<th>
+				<div class="flex justify-content-between align-items-center">
+					stockQuantitySingle
+					<p-columnFilter type="text" field="name" display="menu">
+					</p-columnFilter>
+				</div>
+			</th>
+			<th>
+				<div class="flex justify-content-between align-items-center">
+					Status
+
+				</div>
+			</th>
+			<th>
+				<div *ngIf="isAdmin" class="flex justify-content-between align-items-center">
+					Agent
+
+				</div>
+			</th>
+			<th *ngIf="isAdmin" class="flex justify-content-between align-items-center">
+
+				Associate to a Delivery
+
+			</th>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="body" let-stockRequestDTO>
+		<tr>
+			<td style="min-width: 12rem;">
+
+				{{stockRequestDTO.productDTO.name}}
+
+
+			</td>
+
+			<td style="min-width: 12rem;">
+
+				{{stockRequestDTO.stockQuantityInCarton}}
+
+			</td>
+			<td style="min-width: 12rem;">
+
+				{{stockRequestDTO.stockQuantitySingle}}
+
+			</td>
+
+			<td style="min-width: 12rem;">
+
+				{{stockRequestDTO.stockStatus}}
+
+			</td>
+			<td *ngIf="isAdmin" style="min-width: 12rem;">
+
+				{{stockRequestDTO.relatedAgent.email}}
+
+			</td>
+			<td *ngIf="isAdmin" style="min-width: 12rem;">
+				<button pButton type="button"   icon="pi pi-pencil" (click)="showAssociateToDelivery=true"
+					class="p-button-rounded p-button-text"></button>
+
+			</td>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="emptymessage">
+		<tr>
+			<td colspan="7">No Stocks found.</td>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="loadingbody">
+		<tr>
+			<td colspan="7">Loading Stocks data. Please wait.</td>
+		</tr>
+	</ng-template>
+</p-table>

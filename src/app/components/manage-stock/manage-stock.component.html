@@ -1,0 +1,104 @@
+<p-toast></p-toast>
+<p-confirmDialog header="Confirmation" icon="pi pi-exclamation-triangle"></p-confirmDialog>
+
+
+
+<p-table #dt1 [value]="stocks" dataKey="id" [rows]="10" [loading]="loadingTable" editMode="row" [rowHover]="true"
+	styleClass="p-datatable-gridlines" [paginator]="true" (onPage)="onPage($event)" [globalFilterFields]="['product'  ]"
+	responsiveLayout="scroll">
+	<ng-template pTemplate="caption">
+		<div class="flex justify-content-between flex-column sm:flex-row">
+		 
+			<span class="p-input-icon-left mb-2">
+				<i class="pi pi-search"></i>
+				<input pInputText type="text" #filter (input)="dt1.filterGlobal($event.target.value, 'contains')"
+					placeholder="Search Keyword" class="w-full" />
+			</span>
+		</div>
+	</ng-template>
+	<ng-template pTemplate="header">
+		<tr>
+			<th>
+				<div class="flex justify-content-between align-items-center">
+					product
+					<p-columnFilter type="text" field="name" display="menu" placeholder="Search by product">
+					</p-columnFilter>
+				</div>
+			</th>
+		 
+			<th>
+				<div class="flex justify-content-between align-items-center">
+					stockQuantityInCarton
+					<p-columnFilter type="text" field="name" display="menu">
+					</p-columnFilter>
+				</div>
+			</th>
+			<th>
+				<div class="flex justify-content-between align-items-center">
+					stockQuantitySingle
+					<p-columnFilter type="text" field="name" display="menu">
+					</p-columnFilter>
+				</div>
+			</th>
+			<th>
+				<div class="flex justify-content-between align-items-center">
+					Edit
+
+				</div>
+			</th>
+
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="body" let-stockEntityPerProductDTO let-editing="editing">
+		<tr [pEditableRow]="stockEntityPerProductDTO">
+			<td style="min-width: 12rem;">
+
+				{{stockEntityPerProductDTO.productDTO.name}}
+
+
+			</td>
+		 
+			<td style="min-width: 12rem;">
+				<p-cellEditor>
+					<ng-template pTemplate="input">
+						<input pInputText type="text" [(ngModel)]="stockEntityPerProductDTO.stockQuantityInCarton">
+					</ng-template>
+				<ng-template pTemplate="output">
+					{{stockEntityPerProductDTO.stockQuantityInCarton}}
+				</ng-template>
+			</p-cellEditor>
+			</td>
+			<td style="min-width: 12rem;">
+				<p-cellEditor>
+					<ng-template pTemplate="input">
+						<input pInputText type="text" [(ngModel)]="stockEntityPerProductDTO.stockQuantitySingle">
+					</ng-template>
+				<ng-template pTemplate="output">
+					{{stockEntityPerProductDTO.stockQuantitySingle}}
+				</ng-template>
+				</p-cellEditor>
+			</td>
+			<td style="text-align:center">
+				<button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil"
+					(click)="onRowEditInit(stockEntityPerProductDTO)" class="p-button-rounded p-button-text"></button>
+				<button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check"
+					(click)="onRowEditSave(stockEntityPerProductDTO)"
+					class="p-button-rounded p-button-text p-button-success mr-2"></button>
+				<button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times"
+					(click)="onRowEditCancel(stockEntityPerProductDTO, ri)"
+					class="p-button-rounded p-button-text p-button-danger"></button>
+			</td>
+
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="emptymessage">
+		<tr>
+			<td colspan="7">No Stocks found.</td>
+		</tr>
+	</ng-template>
+	<ng-template pTemplate="loadingbody">
+		<tr>
+			<td colspan="7">Loading Stocks data. Please wait.</td>
+		</tr>
+	</ng-template>
+</p-table>

@@ -1,0 +1,55 @@
+<div class="layout-topbar">
+    <a class="layout-topbar-logo" routerLink="">
+        <img src="assets/layout/images/logo-dark.svg" alt="logo">
+        <span>EcoboostxB</span>
+    </a>
+
+    <a class="p-link layout-menu-button layout-topbar-button" href="#" (click)="appMain.toggleMenu($event)">
+        <i class="pi pi-bars"></i>
+    </a>
+
+    <a class="p-link layout-topbar-menu-button layout-topbar-button" href="#" (click)="appMain.toggleTopMenu($event)">
+        <i class="pi pi-ellipsis-v"></i>config.ripple
+    </a>
+
+    <div class="layout-topbar-menu" [ngClass]="{'layout-topbar-menu-mobile-active':appMain.topMenuActive}">
+      <button class="notification-button" mat-mini-fab [matMenuTriggerFor]="bell">
+        <mat-icon matBadge="{{numberOfNotifications}}" matBadgeColor="warn" class="notification-button__icon">notifications_none</mat-icon>
+      </button>
+      <mat-menu #bell="matMenu" xPosition="before" class="notification-menu">
+       
+      <p-table
+[value]="listOfNotification" [responsive]="true"
+[paginator]="true"
+[rows]="10"
+auto
+>
+<ng-template pTemplate="header">
+  <tr>
+      <th>Notif</th>
+      <th>Action To DO</th>
+    </tr>
+</ng-template>
+<ng-template pTemplate="body" let-itemToDeliver>
+  <tr>
+    <td>{{itemToDeliver.text}}</td>
+     <td>
+      <button
+        pButton
+        type="button"
+        label="Ack"
+        (click)="ackNotification(itemToDeliver)"
+      ></button>
+    </td>
+  </tr>
+</ng-template>
+</p-table>
+      </mat-menu>
+      
+        
+        <a href="#" (click)="logout()" class="p-link layout-topbar-button">
+            <i class="pi pi-sign-out"></i>
+            <span>Profile</span>
+        </a>
+    </div>
+</div>

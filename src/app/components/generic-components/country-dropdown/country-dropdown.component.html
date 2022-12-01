@@ -1,0 +1,14 @@
+<p-dropdown id="country" [options]="availableCountries" (ngModelChange)="handleChange(  $event)" [(ngModel)]="innerValue"  optionLabel="name"
+[style]="{'width':'100%'}"  appendTo="body" 	[filter]="true" filterBy="name" styleClass="w-full mb-3" [showClear]="true"
+				placeholder="Select a Country">
+
+				<ng-template let-country pTemplate="item">
+					<div class="country-item">
+						<img src="assets/images/flag/flag_placeholder.png"
+							[class]="'flag flag-' + country.code.toLowerCase()" />
+						<div>{{country.name}}</div>
+					</div>
+				</ng-template>
+			 
+
+			</p-dropdown> 
