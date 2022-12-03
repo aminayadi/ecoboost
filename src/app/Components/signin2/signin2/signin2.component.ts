@@ -18,7 +18,8 @@ export class Signin2Component implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(
+    private authService: AuthService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -28,6 +29,7 @@ export class Signin2Component implements OnInit {
   }
 
   onSubmit(): void {
+    console.log("on submit ......");
     const { username, password } = this.form;
 
     this.authService.login(username, password).subscribe({
