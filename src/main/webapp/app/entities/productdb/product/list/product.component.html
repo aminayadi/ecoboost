@@ -1,0 +1,212 @@
+<div>
+  <h2 id="page-heading" data-cy="ProductHeading">
+    <span>Products</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span>Refresh list</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-product"
+        [routerLink]="['/product/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span> Create a new Product </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="products?.length === 0">
+    <span>No Products found</span>
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="products && products.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span>ID</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="name">
+            <div class="d-flex">
+              <span>Name</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="image">
+            <div class="d-flex">
+              <span>Image</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="imgname">
+            <div class="d-flex">
+              <span>Imgname</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="description">
+            <div class="d-flex">
+              <span>Description</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="rating">
+            <div class="d-flex">
+              <span>Rating</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="volume">
+            <div class="d-flex">
+              <span>Volume</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="code">
+            <div class="d-flex">
+              <span>Code</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="reduction">
+            <div class="d-flex">
+              <span>Reduction</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="pricetogo">
+            <div class="d-flex">
+              <span>Pricetogo</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="pricenej">
+            <div class="d-flex">
+              <span>Pricenej</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="pricecot">
+            <div class="d-flex">
+              <span>Pricecot</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="priceseneg">
+            <div class="d-flex">
+              <span>Priceseneg</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="priceghan">
+            <div class="d-flex">
+              <span>Priceghan</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="devisetogo">
+            <div class="d-flex">
+              <span>Devisetogo</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="devisenej">
+            <div class="d-flex">
+              <span>Devisenej</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="devisecot">
+            <div class="d-flex">
+              <span>Devisecot</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="deviseseneg">
+            <div class="d-flex">
+              <span>Deviseseneg</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="deviseghan">
+            <div class="d-flex">
+              <span>Deviseghan</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/product', product.id, 'view']">{{ product.id }}</a>
+          </td>
+          <td>{{ product.name }}</td>
+          <td>
+            <a *ngIf="product.image" (click)="openFile(product.image, product.imageContentType)">
+              <img [src]="'data:' + product.imageContentType + ';base64,' + product.image" style="max-height: 30px" alt="product image" />
+            </a>
+            <span *ngIf="product.image">{{ product.imageContentType }}, {{ byteSize(product.image) }}</span>
+          </td>
+          <td>{{ product.imgname }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.rating }}</td>
+          <td>{{ product.volume }}</td>
+          <td>{{ product.code }}</td>
+          <td>{{ product.reduction }}</td>
+          <td>{{ product.pricetogo }}</td>
+          <td>{{ product.pricenej }}</td>
+          <td>{{ product.pricecot }}</td>
+          <td>{{ product.priceseneg }}</td>
+          <td>{{ product.priceghan }}</td>
+          <td>{{ product.devisetogo }}</td>
+          <td>{{ product.devisenej }}</td>
+          <td>{{ product.devisecot }}</td>
+          <td>{{ product.deviseseneg }}</td>
+          <td>{{ product.deviseghan }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/product', product.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/product', product.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(product)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

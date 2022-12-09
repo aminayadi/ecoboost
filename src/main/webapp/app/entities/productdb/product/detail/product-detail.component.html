@@ -1,0 +1,105 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="product">
+      <h2 data-cy="productDetailsHeading"><span>Product</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ product.id }}</span>
+        </dd>
+        <dt><span>Name</span></dt>
+        <dd>
+          <span>{{ product.name }}</span>
+        </dd>
+        <dt><span>Image</span></dt>
+        <dd>
+          <div *ngIf="product.image">
+            <a (click)="openFile(product.image, product.imageContentType)">
+              <img [src]="'data:' + product.imageContentType + ';base64,' + product.image" style="max-width: 100%" alt="product image" />
+            </a>
+            {{ product.imageContentType }}, {{ byteSize(product.image) }}
+          </div>
+        </dd>
+        <dt><span>Imgname</span></dt>
+        <dd>
+          <span>{{ product.imgname }}</span>
+        </dd>
+        <dt><span>Description</span></dt>
+        <dd>
+          <span>{{ product.description }}</span>
+        </dd>
+        <dt><span>Rating</span></dt>
+        <dd>
+          <span>{{ product.rating }}</span>
+        </dd>
+        <dt><span>Volume</span></dt>
+        <dd>
+          <span>{{ product.volume }}</span>
+        </dd>
+        <dt><span>Code</span></dt>
+        <dd>
+          <span>{{ product.code }}</span>
+        </dd>
+        <dt><span>Reduction</span></dt>
+        <dd>
+          <span>{{ product.reduction }}</span>
+        </dd>
+        <dt><span>Pricetogo</span></dt>
+        <dd>
+          <span>{{ product.pricetogo }}</span>
+        </dd>
+        <dt><span>Pricenej</span></dt>
+        <dd>
+          <span>{{ product.pricenej }}</span>
+        </dd>
+        <dt><span>Pricecot</span></dt>
+        <dd>
+          <span>{{ product.pricecot }}</span>
+        </dd>
+        <dt><span>Priceseneg</span></dt>
+        <dd>
+          <span>{{ product.priceseneg }}</span>
+        </dd>
+        <dt><span>Priceghan</span></dt>
+        <dd>
+          <span>{{ product.priceghan }}</span>
+        </dd>
+        <dt><span>Devisetogo</span></dt>
+        <dd>
+          <span>{{ product.devisetogo }}</span>
+        </dd>
+        <dt><span>Devisenej</span></dt>
+        <dd>
+          <span>{{ product.devisenej }}</span>
+        </dd>
+        <dt><span>Devisecot</span></dt>
+        <dd>
+          <span>{{ product.devisecot }}</span>
+        </dd>
+        <dt><span>Deviseseneg</span></dt>
+        <dd>
+          <span>{{ product.deviseseneg }}</span>
+        </dd>
+        <dt><span>Deviseghan</span></dt>
+        <dd>
+          <span>{{ product.deviseghan }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/product', product.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
